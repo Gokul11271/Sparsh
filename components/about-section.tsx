@@ -34,7 +34,29 @@ export function AboutSection() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Content - Image */}
-       
+          <AnimatedText animation="fadeInLeft">
+            <div className="relative">
+              <Image
+                src="/placeholder.svg?height=700&width=600"
+                alt="SPARSH DESIGN Atelier"
+                width={600}
+                height={700}
+                className="rounded-3xl shadow-2xl object-cover"
+              />
+
+              {/* Location Card
+              <div className="absolute -bottom-7 -right-4 w-64 h-32 bg-gradient-to-br from-[#ef9343] to-[#603202] rounded-2xl flex items-center justify-center text-white shadow-2xl">
+                <div className="text-center p-4">
+                  <MapPin className="w-4 h-4 mx-auto mb-1" />
+                  <div className="text-sm font-medium">Coimbatore</div>
+                  <div className="text-xs opacity-90">Tamil Nadu</div>
+                </div>
+              </div> */}
+
+              {/* Background Decoration */}
+              <div className="absolute inset-0 bg-gradient-to-br from-[#ef9343]/20 to-[#603202]/20 rounded-xl transform rotate-3 scale-105 -z-10"></div>
+            </div>
+          </AnimatedText>
 
           {/* Right Content */}
           <div className="space-y-8">
