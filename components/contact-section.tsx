@@ -123,8 +123,8 @@ export function ContactSection() {
           </div>
         </AnimatedText>
 
-        
-        <AnimatedText delay={1000}>
+        {/* map */}
+        {/* <AnimatedText delay={1000}>
   <div className="mt-10 md:mt-16">
     <h2 className="text-center text-2xl md:text-3xl font-bold text-[#603202] mb-6">
       Visit Our Boutique
@@ -142,7 +142,7 @@ export function ContactSection() {
       ></iframe>
     </div>
   </div>
-</AnimatedText>
+</AnimatedText> */}
 {/* Social Media */}
         <AnimatedText delay={800}>
           <div className="text-center mt-16">
