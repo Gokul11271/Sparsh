@@ -133,9 +133,9 @@ export function ServicesSection() {
               Schedule a complimentary 30-minute consultation where we'll discuss your style goals, preferences, and
               recommend the perfect service package tailored to your needs.
             </p>
-            <LiquidButton variant="outline" size="lg">
+            {/* <LiquidButton variant="outline" size="lg">
               Schedule Free Consultation
-            </LiquidButton>
+            </LiquidButton> */}
           </div>
         </AnimatedText>
       </div>

@@ -185,9 +185,9 @@ export function Header() {
           <div className="flex justify-between items-center py-4">
             {/* Logo */}
             <Link href="/" className="flex items-center space-x-3 group">
-              <div className="w-12 h-12 bg-gradient-to-br from-[#ef9343] to-[#603202] rounded-full flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300">
+              {/* <div className="w-12 h-12 bg-gradient-to-br from-[#ef9343] to-[#603202] rounded-full flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300">
                 <span className="text-white font-bold text-xl">S</span>
-              </div>
+              </div> */}
               <div className="flex flex-col">
                 <span className="text-3xl font-bold text-[#603202] tracking-tight group-hover:text-[#ef9343] transition-colors duration-300">
                   SPARSH
