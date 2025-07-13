@@ -123,7 +123,27 @@ export function ContactSection() {
           </div>
         </AnimatedText>
 
-        {/* Social Media */}
+        
+        <AnimatedText delay={1000}>
+  <div className="mt-10 md:mt-16">
+    <h2 className="text-center text-2xl md:text-3xl font-bold text-[#603202] mb-6">
+      Visit Our Boutique
+    </h2>
+    <div className="w-full h-[300px] md:h-[450px] rounded-3xl overflow-hidden shadow-lg border border-[#ef9343]/30">
+      <iframe
+        title="Sparsh Ladies Designer Boutique Location"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.336936594148!2d76.9869790757847!3d11.018664554257384!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba859bc8f158cc3%3A0xcbd9cf9c41573541!2s135%20A%2C%20Above%20Icici%20Atm%2C%20Hope%20College%2C%20Avinashi%20Rd%2C%20Coimbatore%2C%20Tamil%20Nadu%20641004!5e0!3m2!1sen!2sin!4v1720879055821!5m2!1sen!2sin"
+        width="100%"
+        height="100%"
+        style={{ border: 0 }}
+        allowFullScreen   // ✅ Correct usage: no quotes or value
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
+  </div>
+</AnimatedText>
+{/* Social Media */}
         <AnimatedText delay={800}>
           <div className="text-center mt-16">
             <h4 className="text-xl font-semibold text-[#603202] mb-6">Follow Our Journey</h4>
@@ -144,6 +164,7 @@ export function ContactSection() {
             </div>
           </div>
         </AnimatedText>
+
       </div>
     </section>
   )
