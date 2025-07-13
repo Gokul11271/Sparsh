@@ -297,112 +297,86 @@ export function Header() {
 
       {/* Mobile Menu */}
      {/* Mobile Menu */}
-{/* Mobile Menu */}
 {isMenuOpen && (
   <div className="fixed inset-0 z-50 lg:hidden">
-    {/* Backdrop with fade animation */}
+    
+    {/* Backdrop */}
     <div 
-      className={`absolute inset-0 bg-amber-900/80 backdrop-blur-sm transition-opacity duration-300 ${
-        isMenuOpen ? 'opacity-100' : 'opacity-0'
-      }`}
+      className="absolute inset-0 bg-amber-900/80 backdrop-blur-sm transition-opacity duration-300"
       onClick={() => setIsMenuOpen(false)}
     />
-    
+
     {/* Menu Panel */}
-    <div className={`absolute right-0 top-0 h-full w-full max-w-sm bg-emerald-50 shadow-2xl transform transition-transform duration-300 ease-in-out ${
-      isMenuOpen ? 'translate-x-0' : 'translate-x-full'
-    } sm:max-w-xs`}>
+    <div className="absolute right-0 top-0 h-full w-full max-w-sm sm:max-w-xs bg-white shadow-xl transition-transform duration-300 transform translate-x-0">
       
-      {/* Close button */}
-      <div className="absolute top-4 right-4 z-10">
-        <button
-          onClick={() => setIsMenuOpen(false)}
-          className="p-2 rounded-full bg-amber-900/10 hover:bg-amber-900/20 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-amber-500"
-          aria-label="Close menu"
-        >
-          <svg className="w-6 h-6 text-amber-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
-      </div>
+      {/* Close Button */}
+      <button
+        onClick={() => setIsMenuOpen(false)}
+        className="absolute top-4 right-4 p-2 rounded-full bg-amber-900/10 hover:bg-amber-900/20 transition"
+        aria-label="Close menu"
+      >
+        <svg className="w-6 h-6 text-amber-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
 
       {/* Menu Content */}
-      <div className="flex flex-col h-full">
-        {/* Header space - reduced */}
-        <div className="h-12 flex-shrink-0"></div>
+      <div className="flex flex-col h-full px-6 py-8 space-y-6">
         
-        {/* Scrollable content - reduced padding */}
-        <div className="flex-1 overflow-y-auto px-4 py-2 space-y-3 scrollbar-hide">
-          {/* Main Navigation */}
-          <div className="space-y-1">
+        {/* Main Links */}
+        <nav className="space-y-4">
+          {[
+            { name: 'Home', href: '#home' },
+            { name: 'About', href: '#about' },
+            { name: 'Contact', href: '#contact' }
+          ].map((item) => (
             <Link
-              href="#home"
-              className="block text-lg text-amber-900 hover:text-orange-500 transition-colors duration-300 font-medium py-2 border-b border-amber-900/10 hover:border-orange-500/30 min-h-10 flex items-center touch-manipulation"
+              key={item.name}
+              href={item.href}
               onClick={() => setIsMenuOpen(false)}
+              className="block text-lg font-medium text-amber-900 hover:text-orange-500 transition"
             >
-              Home
+              {item.name}
             </Link>
-            <Link
-              href="#about"
-              className="block text-lg text-amber-900 hover:text-orange-500 transition-colors duration-300 font-medium py-2 border-b border-amber-900/10 hover:border-orange-500/30 min-h-10 flex items-center touch-manipulation"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              About
-            </Link>
-          </div>
+          ))}
+        </nav>
 
-          {/* Collections Menu */}
+        {/* Collections */}
+        <div>
+          <h3 className="text-sm font-semibold text-amber-900 mb-2">Collections</h3>
           <div className="space-y-2">
-            <h3 className="text-base font-semibold text-amber-900 border-b-2 border-orange-500 pb-1">
-              Collections
-            </h3>
-            <div className="space-y-1">
-              {collectionsMenu.map((item, index) => (
-                <Link
-                  key={index}
-                  href={item.href}
-                  className="block text-sm text-amber-900/80 hover:text-orange-500 transition-all duration-200 pl-3 py-2 rounded-lg hover:bg-orange-500/10 hover:pl-4 min-h-9 flex items-center touch-manipulation"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.name}
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          {/* Services Menu */}
-          <div className="space-y-2">
-            <h3 className="text-base font-semibold text-amber-900 border-b-2 border-orange-500 pb-1">
-              Services
-            </h3>
-            <div className="space-y-1">
-              {servicesMenu.map((item, index) => (
-                <Link
-                  key={index}
-                  href={item.href}
-                  className="block text-sm text-amber-900/80 hover:text-orange-500 transition-all duration-200 pl-3 py-2 rounded-lg hover:bg-orange-500/10 hover:pl-4 min-h-9 flex items-center touch-manipulation"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.name}
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          {/* Contact Link */}
-          <div className="pt-2">
-            <Link
-              href="#contact"
-              className="block text-lg text-amber-900 hover:text-orange-500 transition-colors duration-300 font-medium py-2 border-b border-amber-900/10 hover:border-orange-500/30 min-h-10 flex items-center touch-manipulation"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Contact
-            </Link>
+            {collectionsMenu.map((item, index) => (
+              <Link
+                key={index}
+                href={item.href}
+                onClick={() => setIsMenuOpen(false)}
+                className="block text-sm text-amber-900/80 hover:text-orange-500 transition pl-2"
+              >
+                {item.name}
+              </Link>
+            ))}
           </div>
         </div>
 
-        {/* Footer CTA - reduced padding */}
-        <div className="flex-shrink-0 p-4 border-t border-amber-900/10">
+        {/* Services */}
+        <div>
+          <h3 className="text-sm font-semibold text-amber-900 mb-2">Services</h3>
+          <div className="space-y-2">
+            {servicesMenu.map((item, index) => (
+              <Link
+                key={index}
+                href={item.href}
+                onClick={() => setIsMenuOpen(false)}
+                className="block text-sm text-amber-900/80 hover:text-orange-500 transition pl-2"
+              >
+                {item.name}
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        {/* CTA Button */}
+        <div className="mt-auto pt-6">
           <LiquidButton 
             size="lg" 
             className="w-full"
@@ -411,10 +385,12 @@ export function Header() {
             Book Consultation
           </LiquidButton>
         </div>
+        
       </div>
     </div>
   </div>
 )}
+
     </>
   )
 }
