@@ -108,9 +108,12 @@ export function TestimonialsSection() {
               </Card>
             </AnimatedText>
           ))}
+          <br>
+          
+          </br>
         </div>
 
-        {/* <AnimatedText delay={600}>
+        <AnimatedText delay={600}>
           <div className="text-center mt-16">
             <div className="inline-flex items-center space-x-12 bg-white rounded-3xl p-10 shadow-2xl border border-[#ef9343]/20">
               <div className="text-center">
@@ -135,7 +138,7 @@ export function TestimonialsSection() {
               </div>
             </div>
           </div>
-        </AnimatedText> */}
+        </AnimatedText>
       </div>
     </section>
   )

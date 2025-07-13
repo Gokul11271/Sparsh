@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import Image from "next/image"
-import { ArrowDown, Sparkles, Award, Users, Clock } from "lucide-react"
+import { ArrowDown, Sparkles } from "lucide-react"
 import Link from "next/link"
 import { AnimatedText } from "./animated-text"
 import { LiquidButton } from "./liquid-button"
@@ -27,11 +27,10 @@ export function HeroSection() {
             <AnimatedText delay={200} animation="liquidReveal">
               <div className="inline-flex items-center space-x-3 bg-gradient-to-r from-[#ef9343]/20 to-[#603202]/20 backdrop-blur-sm px-6 py-3 rounded-full border border-[#ef9343]/30">
                 <Sparkles className="w-5 h-5 text-[#ef9343] animate-spin" />
-                <span className="text-[#603202] font-semibold tracking-wide">Premium Luxury Boutique</span>
+                <span className="text-[#603202] font-semibold tracking-wide">Empowering Women's Elegance</span>
               </div>
             </AnimatedText>
 
-            {/* Animated Title */}
             <AnimatedText delay={400} animation="slideInScale">
               <div className="space-y-4">
                 <h1 className="text-6xl sm:text-7xl lg:text-8xl font-bold leading-tight">
@@ -40,15 +39,14 @@ export function HeroSection() {
                   </span>
                 </h1>
                 <div className="text-2xl sm:text-3xl lg:text-4xl font-light text-[#603202] tracking-[0.3em]">
-                  DESIGN
+                  WOMEN'S DESIGN STUDIO
                 </div>
               </div>
             </AnimatedText>
 
             <AnimatedText delay={600} animation="fadeInUp">
               <p className="text-xl lg:text-2xl text-[#603202]/80 leading-relaxed max-w-2xl font-light">
-                Where timeless elegance meets contemporary sophistication. Crafting bespoke fashion experiences that
-                celebrate your unique style and personality since 2003.
+                Redefining luxury fashion for the modern woman. Bespoke designs that celebrate confidence, grace, and individuality since 2003.
               </p>
             </AnimatedText>
 
@@ -56,50 +54,10 @@ export function HeroSection() {
               <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start">
                 <LiquidButton size="lg" className="group">
                   <span className="flex items-center space-x-2">
-                    <span>Explore Collections</span>
+                    <span>Shop Women's Collection</span>
                     <Sparkles className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
                   </span>
                 </LiquidButton>
-                <LiquidButton variant="outline" size="lg">
-                  Book Consultation
-                </LiquidButton>
-              </div>
-            </AnimatedText>
-
-            {/* Stats */}
-            <AnimatedText delay={1000} animation="fadeInUp">
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-8">
-                <div className="text-center group">
-                  <div className="w-16 h-16 bg-gradient-to-br from-[#ef9343] to-[#603202] rounded-2xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300">
-                    <Clock className="w-8 h-8 text-white" />
-                  </div>
-                  <div className="text-2xl font-bold text-[#603202]">{yearsOfExperience}+</div>
-                  <div className="text-sm text-[#603202]/70 font-medium">Years Experience</div>
-                </div>
-
-                <div className="text-center group">
-                  <div className="w-16 h-16 bg-gradient-to-br from-[#603202] to-[#ef9343] rounded-2xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300">
-                    <Users className="w-8 h-8 text-white" />
-                  </div>
-                  <div className="text-2xl font-bold text-[#603202]">2K+</div>
-                  <div className="text-sm text-[#603202]/70 font-medium">Happy Clients</div>
-                </div>
-
-                <div className="text-center group">
-                  <div className="w-16 h-16 bg-gradient-to-br from-[#ef9343] to-[#603202] rounded-2xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300">
-                    <Award className="w-8 h-8 text-white" />
-                  </div>
-                  <div className="text-2xl font-bold text-[#603202]">99%</div>
-                  <div className="text-sm text-[#603202]/70 font-medium">Satisfaction</div>
-                </div>
-
-                <div className="text-center group">
-                  <div className="w-16 h-16 bg-gradient-to-br from-[#603202] to-[#ef9343] rounded-2xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300">
-                    <Sparkles className="w-8 h-8 text-white" />
-                  </div>
-                  <div className="text-2xl font-bold text-[#603202]">Premium</div>
-                  <div className="text-sm text-[#603202]/70 font-medium">Quality</div>
-                </div>
               </div>
             </AnimatedText>
           </div>
@@ -110,27 +68,12 @@ export function HeroSection() {
               <div className="relative z-10 group">
                 <Image
                   src="/placeholder.svg?height=800&width=600"
-                  alt="SPARSH DESIGN Premium Collection"
+                  alt="SPARSH Women's Luxury Fashion"
                   width={600}
                   height={800}
                   className="rounded-3xl shadow-2xl object-cover group-hover:scale-105 transition-transform duration-700"
                   priority
                 />
-
-                {/* Floating Elements */}
-                <div className="absolute -top-8 -right-8 w-32 h-32 bg-gradient-to-br from-[#ef9343] to-[#603202] rounded-3xl flex items-center justify-center shadow-2xl animate-bounce">
-                  <div className="text-center text-white">
-                    <div className="text-2xl font-bold">Since</div>
-                    <div className="text-xl font-light">2003</div>
-                  </div>
-                </div>
-
-                <div className="absolute -bottom-8 -left-8 w-40 h-28 bg-white/90 backdrop-blur-sm rounded-3xl shadow-2xl flex items-center justify-center border border-[#ef9343]/20">
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-[#603202]">Premium</div>
-                    <div className="text-sm text-[#603202]/70 font-medium">Luxury Fashion</div>
-                  </div>
-                </div>
               </div>
 
               {/* Background Decoration */}
@@ -147,7 +90,7 @@ export function HeroSection() {
               href="#about"
               className="flex flex-col items-center space-y-3 text-[#603202] hover:text-[#ef9343] transition-all duration-500 group"
             >
-              <span className="text-sm font-medium tracking-wide">Discover Our Story</span>
+              <span className="text-sm font-medium tracking-wide">Discover Our Women's Story</span>
               <div className="w-8 h-12 border-2 border-[#603202] rounded-full flex justify-center group-hover:border-[#ef9343] transition-colors duration-300">
                 <ArrowDown className="w-4 h-4 mt-2 animate-bounce group-hover:text-[#ef9343]" />
               </div>
