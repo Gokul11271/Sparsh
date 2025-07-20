@@ -188,12 +188,15 @@ export function Header() {
               {/* <div className="w-12 h-12 bg-gradient-to-br from-[#ef9343] to-[#603202] rounded-full flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300">
                 <span className="text-white font-bold text-xl">S</span>
               </div> */}
-              <div className="flex flex-col">
-                <span className="text-3xl font-bold text-[#603202] tracking-tight group-hover:text-[#ef9343] transition-colors duration-300">
-                  SPARSH
-                </span>
-                <span className="text-xs text-[#603202]/70 -mt-1 tracking-[0.2em] font-medium">DESIGN</span>
-              </div>
+              <div className="flex flex-col group">
+  <span className="text-4xl text-[#603202] tracking-tight font-playfair italic group-hover:text-[#ef9343] transition-colors duration-300">
+    Sparsh
+  </span>
+  <span className="text-sm text-[#603202]/70 font-vibes italic mt-1">
+    Designer
+  </span>
+</div>
+
             </Link>
 
             {/* Desktop Navigation */}
