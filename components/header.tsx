@@ -142,7 +142,7 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Menu, X, ChevronDown, Phone } from "lucide-react"
 import { LiquidButton } from "./liquid-button"
-
+import Image from "next/image"
 const collectionsMenu = [
   { name: "Bridal Collection", href: "#bridal" },
   { name: "Party Wear", href: "#party" },
@@ -184,20 +184,25 @@ export function Header() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
             {/* Logo */}
-            <Link href="/" className="flex items-center space-x-3 group">
-              {/* <div className="w-12 h-12 bg-gradient-to-br from-[#ef9343] to-[#603202] rounded-full flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300">
-                <span className="text-white font-bold text-xl">S</span>
-              </div> */}
-              <div className="flex flex-col group">
-  <span className="text-4xl text-[#603202] tracking-tight font-playfair italic group-hover:text-[#ef9343] transition-colors duration-300">
-    Sparsh
-  </span>
-  <span className="text-sm text-[#603202]/70 font-vibes italic mt-1">
-    Designer
-  </span>
-</div>
+        <Link href="/" className="flex items-center space-x-3 group">
+  <Image
+  src="/newlogo.png"
+  alt="Sparsh Logo"
+  width={100}
+  height={77}
+  className="rounded-full hover:scale-105 transition-transform duration-300"
+/>
 
-            </Link>
+  {/* <div className="flex flex-col group">
+    <span className="text-4xl font-serif font-extrabold text-[#603202] tracking-tight group-hover:text-[#ef9343] transition-colors duration-300">
+      Sparsh
+    </span>
+    <span className="text-sm text-[#603202]/70 font-vibes italic mt-1">
+      Designer
+    </span>
+  </div> */}
+</Link>
+
 
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center space-x-8">
