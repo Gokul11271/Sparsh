@@ -7,7 +7,7 @@ import { LiquidButton } from "./liquid-button"
 
 const collections = [
   {
-    name: "Bridal Couture",
+    name: "Bridal Coutures",
     description: "Exquisite bridal wear for your most special day",
     image: "/placeholder.svg?height=400&width=300",
     price: "Starting ₹35,000",

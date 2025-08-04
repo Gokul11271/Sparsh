@@ -3,6 +3,9 @@ import type { Metadata } from "next"
 import { Inter, Playfair_Display } from "next/font/google"
 import "./globals.css"
 
+// ✅ Add this line
+import { AuthProvider } from "../contexts/AuthContext"
+
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" })
 
@@ -12,7 +15,7 @@ export const metadata: Metadata = {
     "Premium luxury fashion boutique in Coimbatore since 2003. Bespoke tailoring, personal styling, bridal couture. 2K+ happy clients, 99% satisfaction rate.",
   keywords:
     "luxury fashion boutique, bespoke tailoring, personal styling, bridal couture, Coimbatore, Tamil Nadu, custom clothing, premium fashion",
-    generator: 'v0.dev'
+  generator: "v0.dev",
 }
 
 export default function RootLayout({
@@ -22,7 +25,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${inter.variable} ${playfair.variable} font-sans antialiased`}>{children}</body>
+      <body className={`${inter.variable} ${playfair.variable} font-sans antialiased`}>
+        {/* ✅ Wrap children with AuthProvider */}
+        <AuthProvider>
+          {children}
+        </AuthProvider>
+      </body>
     </html>
   )
 }
