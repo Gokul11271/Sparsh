@@ -43,17 +43,6 @@ export function AboutSection() {
                 height={700}
                 className="rounded-3xl shadow-2xl object-cover"
               />
-
-              {/* Location Card
-              <div className="absolute -bottom-7 -right-4 w-64 h-32 bg-gradient-to-br from-[#ef9343] to-[#603202] rounded-2xl flex items-center justify-center text-white shadow-2xl">
-                <div className="text-center p-4">
-                  <MapPin className="w-4 h-4 mx-auto mb-1" />
-                  <div className="text-sm font-medium">Coimbatore</div>
-                  <div className="text-xs opacity-90">Tamil Nadu</div>
-                </div>
-              </div> */}
-
-              {/* Background Decoration */}
               <div className="absolute inset-0 bg-gradient-to-br from-[#ef9343]/20 to-[#603202]/20 rounded-xl transform rotate-3 scale-105 -z-10"></div>
             </div>
           </AnimatedText>
@@ -100,43 +89,28 @@ export function AboutSection() {
                 <div className="flex items-start space-x-4">
                   <MapPin className="w-5 h-5 text-[#ef9343] mt-1" />
                   <div className="text-[#603202]/80">
-                    <div>135 A, Above ICICI ATM</div>
-                    <div>Hope College, Avinashi Rd</div>
+                    <div>135 A, Avinashi Rd, above ICICI ATM</div>
+                    <div>Peelamedu, Sri Nagar, Hope College</div>
                     <div>Coimbatore, Tamil Nadu 641004</div>
                   </div>
                 </div>
               </div>
             </AnimatedText>
 
+            {/* Visit Our Boutique Button */}
             <AnimatedText delay={1200}>
-              <LiquidButton size="lg">Visit Our Boutique</LiquidButton>
+              <a
+                href="https://www.google.co.in/maps/dir/Coimbatore,+Tamil+Nadu/135+A,+Avinashi+Rd,+above+ICICI+ATM,+Peelamedu,+Sri+Nagar,+Hope+College,+Coimbatore,+Tamil+Nadu+641004/@11.0118875,76.9477892,13z/data=!3m2!4b1!5s0x3ba8578572542575:0x64d1c1d491f9fa50!4m14!4m13!1m5!1m1!1s0x3ba859af2f971cb5:0x2fc1c81e183ed282!2m2!1d76.9588876!2d10.9973691!1m5!1m1!1s0x3ba8578574c70215:0x82ba9fdcdf0806d7!2m2!1d77.0193824!2d11.0259674!3e0?hl=en-in&entry=ttu&g_ep=EgoyMDI1MDczMC4wIKXMDSoASAFQAw%3D%3D"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <LiquidButton size="lg">Visit Our Boutique</LiquidButton>
+              </a>
             </AnimatedText>
           </div>
         </div>
-
-        {/* Features Grid */}
-        {/* <AnimatedText delay={1000}>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-20">
-            {features.map((feature, index) => {
-              const Icon = feature.icon
-              return (
-                <Card
-                  key={index}
-                  className="group border-0 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-gradient-to-br from-white to-[#f7faf8]"
-                >
-                  <CardContent className="p-8 text-center">
-                    <div className="w-16 h-16 bg-gradient-to-br from-[#ef9343] to-[#603202] rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                      <Icon className="w-8 h-8 text-white" />
-                    </div>
-                    <h3 className="font-bold text-[#603202] mb-4 text-lg">{feature.title}</h3>
-                    <p className="text-[#603202]/70 leading-relaxed">{feature.description}</p>
-                  </CardContent>
-                </Card>
-              )
-            })}
-          </div>
-        </AnimatedText> */}
       </div>
     </section>
   )
 }
+ 
