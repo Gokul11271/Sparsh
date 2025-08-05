@@ -33,8 +33,8 @@ const contactInfo = [
 ]
 
 const socialLinks = [
-  { icon: Instagram, href: "#", label: "Instagram", color: "from-pink-500 to-purple-600" },
-  { icon: Facebook, href: "#", label: "Facebook", color: "from-blue-500 to-blue-700" },
+  { icon: Instagram, href: "https://www.instagram.com/sparsh_designer/", label: "Instagram", color: "from-pink-500 to-purple-600" },
+  { icon: Facebook, href: "https://www.facebook.com/sparshcbe/", label: "Facebook", color: "from-blue-500 to-blue-700" },
   { icon: Twitter, href: "#", label: "Twitter", color: "from-blue-400 to-blue-600" },
 ]
 

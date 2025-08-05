@@ -288,6 +288,12 @@ export function Header() {
                 Login
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#ef9343] group-hover:w-full transition-all duration-300"></span>
               </Link>
+              
+
+
+<Link href="/gallery" className="text-sm font-medium hover:text-[#8b1c3f]">
+  Gallery
+</Link>
                             </nav>
 
             {/* Contact Info & CTA */}

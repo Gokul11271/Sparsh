@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge"
 import { Palette, Ruler, Sparkles, Users, Clock, Heart } from "lucide-react"
 import { AnimatedText } from "./animated-text"
 import { LiquidButton } from "./liquid-button"
+import Link from "next/link"
 
 const services = [
   {
@@ -113,12 +114,12 @@ export function ServicesSection() {
                       </ul>
                     </div>
 
-                    <LiquidButton className="w-full group/btn">
+                    {/* <LiquidButton className="w-full group/btn">
                       <span className="flex items-center justify-center space-x-2">
                         <span>Book Consultation</span>
                         <Sparkles className="w-4 h-4 group-hover/btn:rotate-12 transition-transform duration-300" />
                       </span>
-                    </LiquidButton>
+                    </LiquidButton> */}
                   </CardContent>
                 </Card>
               </AnimatedText>
@@ -133,9 +134,12 @@ export function ServicesSection() {
               Schedule a complimentary 30-minute consultation where we'll discuss your style goals, preferences, and
               recommend the perfect service package tailored to your needs.
             </p>
-            {/* <LiquidButton variant="outline" size="lg">
-              Schedule Free Consultation
-            </LiquidButton> */}
+            
+            <Link href="#contact" scroll={true}>
+  <LiquidButton variant="outline" size="lg">
+    Schedule Free Consultation
+  </LiquidButton>
+</Link>
           </div>
         </AnimatedText>
       </div>

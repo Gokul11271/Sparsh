@@ -1,5 +1,6 @@
 import { Sparkles, MapPin, Phone, Mail } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
@@ -12,12 +13,19 @@ export function Footer() {
           {/* Brand */}
           <div className="space-y-6">
             <Link href="/" className="flex items-center space-x-3">
-              <div className="w-12 h-12 bg-gradient-to-br from-[#ef9343] to-white rounded-full flex items-center justify-center">
+             <Image
+              src="/newlogo.png"
+              alt="Sparsh Logo"
+              width={100}
+              height={77}
+              className="rounded-full hover:scale-105 transition-transform duration-300"
+            />
+              {/* <div className="w-12 h-12 bg-gradient-to-br from-[#ef9343] to-white rounded-full flex items-center justify-center">
                 <Sparkles className="w-7 h-7 text-[#603202]" />
-              </div>
+              </div> */}
               <div className="flex flex-col">
-                <span className="text-3xl font-bold tracking-tight">SPARSH</span>
-                <span className="text-xs text-white/70 -mt-1 tracking-[0.3em] font-medium">DESIGN</span>
+                <span className="text-3xl font-bold tracking-tight">DESIGN</span>
+                {/* <span className="text-xs text-white/70 -mt-1 tracking-[0.3em] font-medium">DESIGN</span> */}
               </div>
             </Link>
             <p className="text-white/80 leading-relaxed">
