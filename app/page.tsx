@@ -15,11 +15,11 @@ export default function LandingPage() {
       <Header />
       <HeroSection />
       <AboutSection />
+       <GallerySection />
       <CollectionsSection />
       <ServicesSection />
       <TestimonialsSection />
       <ContactSection />
-      <GallerySection />
       <Footer />
     </div>
   )

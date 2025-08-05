@@ -281,13 +281,20 @@ export function Header() {
                 Contact
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#ef9343] group-hover:w-full transition-all duration-300"></span>
               </Link>
-            </nav>
+              <Link
+               href="/admin/login"
+                className="text-[#603202] hover:text-[#ef9343] transition-all duration-300 font-medium relative group"
+              >
+                Login
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#ef9343] group-hover:w-full transition-all duration-300"></span>
+              </Link>
+                            </nav>
 
             {/* Contact Info & CTA */}
             <div className="hidden xl:flex items-center space-x-6">
               <div className="flex items-center space-x-2 text-[#603202]">
                 <Phone className="w-4 h-4 text-[#ef9343]" />
-                <span className="font-medium">098657 66573</span>
+                <span className="font-medium">+91 99940 56184</span>
               </div>
               <LiquidButton size="md">Book Consultation</LiquidButton>
             </div>

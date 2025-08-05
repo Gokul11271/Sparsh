@@ -115,7 +115,7 @@ export function AboutSection() {
         </div>
 
         {/* Features Grid */}
-        <AnimatedText delay={1000}>
+        {/* <AnimatedText delay={1000}>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-20">
             {features.map((feature, index) => {
               const Icon = feature.icon
@@ -135,7 +135,7 @@ export function AboutSection() {
               )
             })}
           </div>
-        </AnimatedText>
+        </AnimatedText> */}
       </div>
     </section>
   )
