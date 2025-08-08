@@ -291,7 +291,7 @@ export function Header() {
               
 
 
-               <Link href="/gallery" className="text-sm font-medium hover:text-[#8b1c3f]">
+               <Link href="/gallery"  className="text-[#603202] hover:text-[#ef9343] transition-all duration-300 font-medium relative group">
                   Gallery
               </Link>
                             </nav>
