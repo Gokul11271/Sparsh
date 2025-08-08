@@ -1,3 +1,5 @@
+"use client"
+
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Star, ArrowRight } from "lucide-react"
@@ -5,56 +7,25 @@ import Image from "next/image"
 import { AnimatedText } from "./animated-text"
 import { LiquidButton } from "./liquid-button"
 
-const collections = [
-  {
-    name: "Bridal Coutures",
-    description: "Exquisite bridal wear for your most special day",
-    image: "/placeholder.svg?height=400&width=300",
-    price: "Starting ₹35,000",
-    rating: 5,
-    featured: true,
-  },
-  {
-    name: "Evening Elegance",
-    description: "Sophisticated evening wear and cocktail dresses",
-    image: "/placeholder.svg?height=400&width=300",
-    price: "Starting ₹12,000",
-    rating: 5,
-    featured: false,
-  },
-  {
-    name: "Traditional Heritage",
-    description: "Timeless traditional wear with contemporary touch",
-    image: "/placeholder.svg?height=400&width=300",
-    price: "Starting ₹8,000",
-    rating: 5,
-    featured: true,
-  },
-  {
-    name: "Designer Sarees",
-    description: "Handcrafted sarees with intricate detailing",
-    image: "/placeholder.svg?height=400&width=300",
-    price: "Starting ₹18,000",
-    rating: 5,
-    featured: false,
-  },
-  {
-    name: "Casual Luxury",
-    description: "Comfortable yet sophisticated everyday wear",
-    image: "/placeholder.svg?height=400&width=300",
-    price: "Starting ₹5,500",
-    rating: 4,
-    featured: false,
-  },
-  {
-    name: "Custom Creations",
-    description: "Bespoke designs tailored to your vision",
-    image: "/placeholder.svg?height=400&width=300",
-    price: "Starting ₹25,000",
-    rating: 5,
-    featured: true,
-  },
-]
+// 👇 Import images statically (they're inside components/gallery/image/)
+import img1 from "@/components/image/g2.jpg"
+import img2 from "@/components/image/green.jpg"
+import img3 from "@/components/image/fullblue.jpg"
+import img4 from "@/components/image/pur22prem.jpg"
+import img5 from "@/components/image/purple.jpg"
+import img6 from "@/components/image/red.jpg"
+
+
+const imageSources = [img1, img2, img3, img4, img5, img6]
+
+const collections = imageSources.map((image, index) => ({
+  name: `Collection ${index + 1}`,
+  description: "Exquisite handcrafted designs for elegant occasions",
+  image: image,
+  price: `Starting ₹${(index + 1) * 5000}`,
+  rating: 5,
+  featured: index % 2 === 0,
+}))
 
 export function CollectionsSection() {
   return (
@@ -78,8 +49,7 @@ export function CollectionsSection() {
 
           <AnimatedText delay={400}>
             <p className="text-xl text-[#603202]/80 max-w-3xl mx-auto leading-relaxed">
-              Each piece in our collection represents the perfect harmony of traditional craftsmanship and contemporary
-              design, created to make you feel extraordinary on every occasion.
+              Each piece in our collection represents the perfect harmony of traditional craftsmanship and contemporary design, created to make you feel extraordinary on every occasion.
             </p>
           </AnimatedText>
         </div>
@@ -95,7 +65,7 @@ export function CollectionsSection() {
                     </Badge>
                   )}
                   <Image
-                    src={collection.image || "/placeholder.svg"}
+                    src={collection.image}
                     alt={collection.name}
                     width={300}
                     height={400}
@@ -103,7 +73,6 @@ export function CollectionsSection() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#603202]/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
-                  {/* Hover Overlay */}
                   <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                     <LiquidButton variant="secondary" size="sm">
                       View Details

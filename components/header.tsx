@@ -291,9 +291,9 @@ export function Header() {
               
 
 
-<Link href="/gallery" className="text-sm font-medium hover:text-[#8b1c3f]">
-  Gallery
-</Link>
+               <Link href="/gallery" className="text-sm font-medium hover:text-[#8b1c3f]">
+                  Gallery
+              </Link>
                             </nav>
 
             {/* Contact Info & CTA */}
