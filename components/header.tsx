@@ -234,7 +234,7 @@ export function Header() {
                 </button>
 
                 {activeDropdown === "collections" && (
-                  <div className="absolute top-full left-0 mt-2 w-56 bg-[#f7faf8] rounded-xl shadow-2xl border border-[#ef9343]/20 py-2 animate-in slide-in-from-top-2 duration-200">
+                  <div className="absolute top-full left-0 mt-2 w-56 bg-[#f7faf8] rounded-xl shadow-2xl border border-[#ef9343]/20 py-2 animate-in slide-in-from-top-2 duration-300">
                     {collectionsMenu.map((item, index) => (
                       <Link
                         key={index}
@@ -284,7 +284,7 @@ export function Header() {
               <Link
                href="/admin/login"
                 className="text-[#603202] hover:text-[#ef9343] transition-all duration-300 font-medium relative group"
-              >
+              >  
                Admin Login
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#ef9343] group-hover:w-full transition-all duration-300"></span>
               </Link>
