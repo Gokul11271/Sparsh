@@ -64,10 +64,10 @@ mongoose
   .connect(
     process.env.MONGODB_URI ||
       "mongodb+srv://Sparsh-design:70SARK36QyzF0BtT@cluster0.m5be8nm.mongodb.net/",
-    {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    }
+    // {
+    //   useNewUrlParser: true,
+    //   useUnifiedTopology: true,
+    // }
   ) //mongodb+srv://Sparsh-design:70SARK36QyzF0BtT@cluster0.m5be8nm.mongodb.net/
   .then(() => console.log("MongoDB connected successfully"))
   .catch((err) => console.error("MongoDB connection error:", err));
