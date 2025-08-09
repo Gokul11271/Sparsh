@@ -8,6 +8,8 @@ import { AnimatedText } from "../animated-text"
 import { Filter, Grid, List, Search, Eye, Calendar, Tag } from "lucide-react"
 import { ImageModal } from "./image-modal"
 import Image from "next/image"
+import React from "react";
+import { FaWhatsapp } from "react-icons/fa";
 
 interface GalleryImage {
   _id: string
@@ -323,35 +325,72 @@ export default function GalleryPageContent() {
                     />
                   </div>
 
-                  {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
-  <div className="text-white space-y-3 w-full drop-shadow-lg">
-    {/* Uncomment if you want to enable the title */}
-    {/* <h3 className="font-semibold text-lg group-hover:translate-y-0 translate-y-4 transition-transform duration-300">
-        {image.title}
-    </h3> */}
-    <p className="text-sm text-white/90 group-hover:translate-y-0 translate-y-4 transition-transform duration-400 line-clamp-2 leading-relaxed">
-      {image.description}
-    </p>
-    <div className="flex items-center justify-between group-hover:translate-y-0 translate-y-4 transition-transform duration-500">
-      {/* Uncomment if you want sectors & templates */}
-      {/* <div className="flex items-center space-x-2">
-        <span className="text-xs bg-[#ef9343]/90 px-2 py-1 rounded-full">{image.sector}</span>
-        <span className="text-xs bg-[#603202]/90 px-2 py-1 rounded-full">{image.template}</span>
-      </div> */}
-      <button
-        onClick={(e) => {
-          e.stopPropagation();
-          openModal(index);
-        }}
-        className="p-2 bg-white/25 backdrop-blur-sm rounded-full hover:bg-white/40 transition-colors shadow-md"
-        aria-label="View details"
-      >
-        <Eye className="w-5 h-5 text-white" />
-      </button>
+                  {/* Overlay whats app*/}
+             {/* Overlay whats app */}
+<div
+  className="
+    absolute inset-0 
+    bg-gradient-to-t from-black/80 via-transparent to-transparent 
+    opacity-100 sm:opacity-0 sm:group-hover:opacity-100 
+    transition-opacity duration-500 
+    flex items-end p-4 sm:p-6 cursor-pointer
+  "
+  onClick={() =>
+    openModal(filteredImages.findIndex((img) => img._id === image._id))
+  }
+>
+  <div className="text-white space-y-2 w-full">
+    <div className="
+      flex items-center justify-end 
+      translate-y-0 sm:translate-y-4 sm:group-hover:translate-y-0 
+      transition-transform duration-500
+    ">
+      <div className="flex gap-3">
+        
+        {/* View Button */}
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            openModal(filteredImages.findIndex((img) => img._id === image._id));
+          }}
+          className="
+            w-11 h-11 sm:w-10 sm:h-10 
+            bg-white/20 backdrop-blur-sm rounded-full 
+            hover:bg-white/30 transition-colors 
+            flex items-center justify-center
+          "
+        >
+          <Eye className="w-5 h-5 sm:w-4 sm:h-4" />
+        </button>
+
+        {/* WhatsApp Share Button */}
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            const phoneNumber = "919994056184";
+            const text = `Hello, I would like to know more about:\n\n*${image.title}*\n${image.description}\n\nImage: ${image.imageUrl}`;
+            const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
+            window.open(url, "_blank");
+          }}
+          className="
+            w-11 h-11 sm:w-10 sm:h-10 
+            bg-green-500 hover:bg-green-600 
+            rounded-full shadow-md hover:shadow-lg 
+            transition-all duration-300 
+            flex items-center justify-center
+          "
+          title="Share on WhatsApp"
+        >
+          <FaWhatsapp className="w-5 h-5 sm:w-4 sm:h-4 text-white" />
+        </button>
+
+      </div>
     </div>
   </div>
 </div>
+
+
+
 
 
                   {/* Info Panel */}
