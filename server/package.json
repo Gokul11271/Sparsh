@@ -3,9 +3,14 @@
   "version": "1.0.0",
   "description": "Backend for SPARSH DESIGN MERN application with local file storage",
   "main": "server.js",
+  "type": "module",
   "scripts": {
     "start": "node server.js",
-    "dev": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "build": "echo 'No build step required'"
+  },
+  "engines": {
+    "node": ">=18"
   },
   "dependencies": {
     "bcrypt": "^6.0.0",
