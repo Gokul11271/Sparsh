@@ -100,7 +100,7 @@ export default function Dashboard() {
   }
 
   const sectors = ["Wedding", "Corporate", "Fashion", "Traditional", "Casual", "Festive", "Bridal", "Evening"]
-  const templates = ["Portrait", "Landscape", "Square", "Collage", "Minimalist", "Vintage", "Modern", "Classic"]
+  const templates = ["Portrait", "Landscape", ] //"Square", "Collage", "Minimalist", "Vintage", "Modern", "Classic"
 
   return (
     <div className="min-h-screen bg-[#f7faf8]">

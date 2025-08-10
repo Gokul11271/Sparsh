@@ -153,3 +153,220 @@ export function TestimonialsSection() {
     </section>
   )
 }
+
+// "use client";
+
+// import { useEffect, useState } from "react";
+// import axios from "axios";
+// import { Card, CardContent } from "@/components/ui/card";
+// import { Star, Trash } from "lucide-react";
+// import { Badge } from "@/components/ui/badge";
+// import Image from "next/image";
+// import { AnimatedText } from "./animated-text";
+
+// const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:5000";
+
+// export function TestimonialsSection({ isAdmin = false }) {
+//   const [reviews, setReviews] = useState([]);
+//   const [formData, setFormData] = useState({
+//     name: "",
+//     role: "",
+//     location: "",
+//     content: "",
+//     rating: 5,
+//     image: "",
+//   });
+//   const [showForm, setShowForm] = useState(false);
+//   const [showAll, setShowAll] = useState(false);
+
+//   // Fetch ALL reviews
+//   useEffect(() => {
+//     axios
+//       .get(`${API_BASE}/api/reviews`)
+//       .then((res) => setReviews(res.data))
+//       .catch((err) => console.error("Error fetching reviews:", err));
+//   }, []);
+
+//   const handleAddReview = async () => {
+//     try {
+//       const res = await axios.post(`${API_BASE}/api/reviews`, formData);
+//       setReviews((prev) => [res.data, ...prev]);
+//       setShowForm(false);
+//       setFormData({
+//         name: "",
+//         role: "",
+//         location: "",
+//         content: "",
+//         rating: 5,
+//         image: "",
+//       });
+//     } catch (err) {
+//       console.error("Error adding review:", err);
+//     }
+//   };
+
+//   const handleDelete = async (id) => {
+//     try {
+//       await axios.delete(`${API_BASE}/api/reviews/${id}`);
+//       setReviews((prev) => prev.filter((r) => r._id !== id));
+//     } catch (err) {
+//       console.error("Error deleting review:", err);
+//     }
+//   };
+
+//   // Decide which reviews to show
+//   const displayedReviews = showAll ? reviews : reviews.slice(0, 4);
+
+//   return (
+//     <section className="py-20 bg-[#f7faf8]">
+//       <div className="container mx-auto px-4">
+//         <div className="text-center mb-12">
+//           <AnimatedText>
+//             <Badge className="mx-auto bg-[#ef9343]/20 text-[#603202]">
+//               Client Stories
+//             </Badge>
+//           </AnimatedText>
+//           <h2 className="text-4xl font-bold text-[#603202]">
+//             What Our Clients Say
+//           </h2>
+//         </div>
+
+//         {/* Reviews */}
+//         <div className="grid md:grid-cols-2 gap-8">
+//           {displayedReviews.map((review) => (
+//             <Card
+//               key={review._id}
+//               className="relative border-0 shadow-lg bg-white"
+//             >
+//               {isAdmin && (
+//                 <button
+//                   onClick={() => handleDelete(review._id)}
+//                   className="absolute top-3 right-3 text-red-500 hover:text-red-700"
+//                 >
+//                   <Trash size={20} />
+//                 </button>
+//               )}
+//               <CardContent className="p-8 space-y-4">
+//                 <div className="flex space-x-1">
+//                   {[...Array(review.rating || 0)].map((_, i) => (
+//                     <Star
+//                       key={i}
+//                       className="w-5 h-5 text-[#ef9343] fill-current"
+//                     />
+//                   ))}
+//                 </div>
+//                 <blockquote className="italic text-lg">
+//                   "{review.content}"
+//                 </blockquote>
+//                 <div className="flex items-center gap-4">
+//                   <Image
+//                     src={review.image || "/placeholder.svg"}
+//                     width={60}
+//                     height={60}
+//                     className="rounded-full"
+//                     alt={review.name || "Reviewer"}
+//                   />
+//                   <div>
+//                     <p className="font-bold">{review.name}</p>
+//                     <p className="text-sm">
+//                       {review.role} — {review.location}
+//                     </p>
+//                   </div>
+//                 </div>
+//               </CardContent>
+//             </Card>
+//           ))}
+//         </div>
+
+//         {/* Load More Button */}
+//         {reviews.length > 4 && !showAll && (
+//           <div className="text-center mt-10">
+//             <button
+//               onClick={() => setShowAll(true)}
+//               className="bg-[#ef9343] text-white px-6 py-3 rounded-lg shadow hover:bg-[#d87d33]"
+//             >
+//               Load More
+//             </button>
+//           </div>
+//         )}
+
+//         {/* Add Review Button */}
+//         <div className="text-center mt-10">
+//           <button
+//             onClick={() => setShowForm(true)}
+//             className="bg-[#ef9343] text-white px-6 py-3 rounded-lg shadow hover:bg-[#d87d33]"
+//           >
+//             Add Your Review
+//           </button>
+//         </div>
+
+//         {/* Review Form Modal */}
+//         {showForm && (
+//           <div className="fixed inset-0 bg-black/50 flex justify-center items-center z-50">
+//             <div className="bg-white p-6 rounded-lg shadow-lg max-w-md w-full">
+//               <h3 className="text-xl font-bold mb-4">
+//                 Share Your Experience
+//               </h3>
+//               <input
+//                 type="text"
+//                 placeholder="Name"
+//                 value={formData.name}
+//                 className="border p-2 w-full mb-2"
+//                 onChange={(e) =>
+//                   setFormData({ ...formData, name: e.target.value })
+//                 }
+//               />
+//               <input
+//                 type="text"
+//                 placeholder="Role"
+//                 value={formData.role}
+//                 className="border p-2 w-full mb-2"
+//                 onChange={(e) =>
+//                   setFormData({ ...formData, role: e.target.value })
+//                 }
+//               />
+//               <input
+//                 type="text"
+//                 placeholder="Location"
+//                 value={formData.location}
+//                 className="border p-2 w-full mb-2"
+//                 onChange={(e) =>
+//                   setFormData({ ...formData, location: e.target.value })
+//                 }
+//               />
+//               <textarea
+//                 placeholder="Your review"
+//                 value={formData.content}
+//                 className="border p-2 w-full mb-2"
+//                 onChange={(e) =>
+//                   setFormData({ ...formData, content: e.target.value })
+//                 }
+//               ></textarea>
+//               <input
+//                 type="text"
+//                 placeholder="Image URL (optional)"
+//                 value={formData.image}
+//                 className="border p-2 w-full mb-2"
+//                 onChange={(e) =>
+//                   setFormData({ ...formData, image: e.target.value })
+//                 }
+//               />
+//               <button
+//                 onClick={handleAddReview}
+//                 className="bg-[#ef9343] text-white px-4 py-2 rounded"
+//               >
+//                 Submit Review
+//               </button>
+//               <button
+//                 onClick={() => setShowForm(false)}
+//                 className="ml-2 text-gray-500"
+//               >
+//                 Cancel
+//               </button>
+//             </div>
+//           </div>
+//         )}
+//       </div>
+//     </section>
+//   );
+// }
