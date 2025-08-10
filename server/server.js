@@ -23,7 +23,13 @@ const server = http.createServer(app);
 const allowedOrigins = [
   process.env.CLIENT_URL || "http://localhost:3000",
   "http://localhost:5173",
+  "https://sparsh--frontend.vercel.app/",
 ];
+
+app.use(cors({
+  origin: allowedOrigins,
+  credentials: true,
+}));  
 
 const io = socketIo(server, {
   cors: {
