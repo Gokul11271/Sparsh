@@ -66,4 +66,43 @@ export const galleryAPI = {
   getImage: (id: string) => api.get(`/gallery/${id}`),
 }
 
+// Reviews API
+export const reviewsAPI = {
+  // Public endpoints
+  getPublic: (params?: any) => api.get("/reviews/public", { params }),
+
+  submit: (formData: FormData) =>
+    api.post("/reviews/submit", formData, {
+      headers: { "Content-Type": "multipart/form-data" },
+    }),
+
+  // Admin endpoints
+  getAll: (params?: any) => api.get("/reviews/admin", { params }),
+
+  approve: (id: string) => api.put(`/reviews/admin/${id}/approve`),
+
+  updateVisibility: (id: string, isVisible: boolean) => api.put(`/reviews/admin/${id}/visibility`, { isVisible }),
+
+  delete: (id: string) => api.delete(`/reviews/admin/${id}`),
+
+  getStats: () => api.get("/reviews/admin/stats"),
+}
+
+// Analytics API
+export const analyticsAPI = {
+  track: (data: any) => api.post("/analytics/track", data),
+
+  updateDuration: (sessionId: string, duration: number) =>
+    api.put(`/analytics/track/${sessionId}/duration`, { duration }),
+
+  getStats: (params?: any) => api.get("/analytics/stats", { params }),
+
+  getOverview: () => api.get("/analytics/overview"),
+
+  getRecent: () => api.get("/analytics/recent"),
+
+  test: () => api.get("/analytics/test"),
+}
+
+
 export default api
