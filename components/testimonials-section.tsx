@@ -7,7 +7,7 @@ import { Star, Quote, Plus } from "lucide-react"
 import Image from "next/image"
 import { AnimatedText } from "./animated-text"
 import AddReviewModal from "./reviews/AddReviewModal"
-import { reviewsAPI } from "@/lib/api"
+import axios from "axios"
 import toast from "react-hot-toast"
 
 interface Review {
@@ -21,8 +21,8 @@ interface Review {
   createdAt: string
 }
 
-// Default testimonials to show when no reviews are available
-const defaultTestimonials = [
+// Default testimonials
+const defaultTestimonials: Review[] = [
   {
     _id: "default-1",
     name: "Priya Krishnan",
@@ -78,29 +78,61 @@ export function TestimonialsSection() {
     fetchReviews()
   }, [])
 
+  // const fetchReviews = async () => {
+  //   try {
+  //     const apiBase = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000"
+  //     const response = await axios.get(`${apiBase}/api/reviews/public`, {
+  //       params: { limit: 4 },
+  //     })
+
+  //     if (response.data?.data?.length > 0) {
+  //       setReviews(response.data.data)
+  //     }
+  //   } catch (error: any) {
+  //     console.error(
+  //       "Failed to fetch reviews:",
+  //       error.response?.data || error.message
+  //     )
+  //     // keep default testimonials on error
+  //   } finally {
+  //     setLoading(false)
+  //   }
+  // }
   const fetchReviews = async () => {
-    try {
-      const response = await reviewsAPI.getPublic({ limit: 4 })
-      if (response.data.data.length > 0) {
-        setReviews(response.data.data)
-      }
-      // If no reviews, keep default testimonials
-    } catch (error) {
-      console.error("Failed to fetch reviews:", error)
-      // Keep default testimonials on error
-    } finally {
-      setLoading(false)
+  try {
+    // Remove trailing slash or /api from base to avoid duplication
+    let apiBase = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
+    apiBase = apiBase.replace(/\/+$/, ""); // remove trailing slash
+    apiBase = apiBase.replace(/\/api$/, ""); // remove ending /api if exists
+
+    const response = await axios.get(`${apiBase}/api/reviews/public`, {
+      params: { limit: 4 },
+    });
+
+    if (response.data?.data?.length > 0) {
+      setReviews(response.data.data);
     }
+  } catch (error: any) {
+    console.error(
+      "Failed to fetch reviews:",
+      error.response?.data || error.message
+    );
+    // keep default testimonials on error
+  } finally {
+    setLoading(false);
   }
+};
+
 
   const handleReviewSuccess = () => {
-    // Optionally refresh reviews or show a success message
     toast.success("Thank you for your review!")
+    fetchReviews()
   }
 
   return (
     <section className="py-20 bg-[#f7faf8]">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
         <div className="text-center space-y-6 mb-16">
           <AnimatedText>
             <Badge className="w-fit mx-auto bg-[#ef9343]/20 text-[#603202] hover:bg-[#ef9343]/30 border-[#ef9343]/30">
@@ -119,15 +151,21 @@ export function TestimonialsSection() {
 
           <AnimatedText delay={400}>
             <p className="text-xl text-[#603202]/80 max-w-3xl mx-auto leading-relaxed">
-              Don't just take our word for it. Here's what our valued clients have to say about their transformative
-              experience with SPARSH DESIGN.
+              Don't just take our word for it. Here's what our valued clients
+              have to say about their transformative experience with SPARSH
+              DESIGN.
             </p>
           </AnimatedText>
         </div>
 
+        {/* Reviews */}
         <div className="grid md:grid-cols-2 gap-8 mb-12">
           {reviews.map((review, index) => (
-            <AnimatedText key={review._id} delay={index * 150} animation="fadeInUp">
+            <AnimatedText
+              key={review._id}
+              delay={index * 150}
+              animation="fadeInUp"
+            >
               <Card className="group border-0 shadow-lg hover:shadow-2xl transition-all duration-700 hover:-translate-y-2 relative overflow-hidden bg-white">
                 <div className="absolute top-6 right-6 opacity-10 group-hover:opacity-20 transition-opacity duration-300">
                   <Quote className="w-20 h-20 text-[#ef9343]" />
@@ -136,7 +174,10 @@ export function TestimonialsSection() {
                 <CardContent className="p-8 space-y-6">
                   <div className="flex items-center space-x-1">
                     {[...Array(review.rating)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 text-[#ef9343] fill-current" />
+                      <Star
+                        key={i}
+                        className="w-5 h-5 text-[#ef9343] fill-current"
+                      />
                     ))}
                   </div>
 
@@ -146,16 +187,24 @@ export function TestimonialsSection() {
 
                   <div className="flex items-center space-x-4 pt-6 border-t border-[#ef9343]/20">
                     <Image
-                      src={review.image || "/placeholder.svg?height=60&width=60"}
+                      src={
+                        review.image || "/placeholder.svg?height=60&width=60"
+                      }
                       alt={review.name}
                       width={60}
                       height={60}
                       className="rounded-full object-cover border-2 border-[#ef9343]/30"
                     />
                     <div>
-                      <div className="font-bold text-[#603202] text-lg">{review.name}</div>
-                      <div className="text-[#603202]/70 font-medium">{review.role}</div>
-                      <div className="text-sm text-[#ef9343] font-medium">{review.location}</div>
+                      <div className="font-bold text-[#603202] text-lg">
+                        {review.name}
+                      </div>
+                      <div className="text-[#603202]/70 font-medium">
+                        {review.role}
+                      </div>
+                      <div className="text-sm text-[#ef9343] font-medium">
+                        {review.location}
+                      </div>
                     </div>
                   </div>
                 </CardContent>
@@ -174,56 +223,54 @@ export function TestimonialsSection() {
               <Plus className="w-5 h-5 group-hover:rotate-90 transition-transform duration-300" />
               <span className="font-semibold">Share Your Experience</span>
             </button>
-            <p className="text-[#603202]/60 mt-3 text-sm">Had a great experience? We'd love to hear from you!</p>
+            <p className="text-[#603202]/60 mt-3 text-sm">
+              Had a great experience? We'd love to hear from you!
+            </p>
           </div>
         </AnimatedText>
 
         {/* Statistics */}
-      <AnimatedText delay={800}>
-  <div className="text-center px-4">
-    <div className="flex flex-col md:flex-row items-center justify-center bg-white rounded-3xl p-6 md:p-10 shadow-2xl border border-[#ef9343]/100 gap-8 md:gap-12">
+        <AnimatedText delay={800}>
+          <div className="text-center px-4">
+            <div className="flex flex-col md:flex-row items-center justify-center bg-white rounded-3xl p-6 md:p-10 shadow-2xl border border-[#ef9343]/100 gap-8 md:gap-12">
+              {/* Stat 1 */}
+              <div className="text-center">
+                <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-[#ef9343] to-[#603202] bg-clip-text text-transparent">
+                  2K+
+                </div>
+                <div className="text-[#603202]/70 font-medium text-base md:text-lg">
+                  Happy Clients
+                </div>
+              </div>
 
-      {/* Stat 1 */}
-      <div className="text-center">
-        <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-[#ef9343] to-[#603202] bg-clip-text text-transparent">
-          2K+
-        </div>
-        <div className="text-[#603202]/70 font-medium text-base md:text-lg">
-          Happy Clients
-        </div>
-      </div>
+              {/* Divider */}
+              <div className="hidden md:block w-px h-16 bg-[#ef9343]/30"></div>
 
-      {/* Divider */}
-      <div className="hidden md:block w-px h-16 bg-[#ef9343]/30"></div>
+              {/* Stat 2 */}
+              <div className="text-center">
+                <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-[#603202] to-[#ef9343] bg-clip-text text-transparent">
+                  22+
+                </div>
+                <div className="text-[#603202]/70 font-medium text-base md:text-lg">
+                  Years Experience
+                </div>
+              </div>
 
-      {/* Stat 2 */}
-      <div className="text-center">
-        <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-[#603202] to-[#ef9343] bg-clip-text text-transparent">
-          22+
-        </div>
-        <div className="text-[#603202]/70 font-medium text-base md:text-lg">
-          Years Experience
-        </div>
-      </div>
+              {/* Divider */}
+              <div className="hidden md:block w-px h-16 bg-[#ef9343]/30"></div>
 
-      {/* Divider */}
-      <div className="hidden md:block w-px h-16 bg-[#ef9343]/30"></div>
-
-      {/* Stat 3 */}
-      <div className="text-center">
-        <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-[#ef9343] to-[#603202] bg-clip-text text-transparent">
-          99%
-        </div>
-        <div className="text-[#603202]/70 font-medium text-base md:text-lg">
-          Satisfaction Rate
-        </div>
-      </div>
-
-    </div>
-  </div>
-</AnimatedText>
-
-
+              {/* Stat 3 */}
+              <div className="text-center">
+                <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-[#ef9343] to-[#603202] bg-clip-text text-transparent">
+                  99%
+                </div>
+                <div className="text-[#603202]/70 font-medium text-base md:text-lg">
+                  Satisfaction Rate
+                </div>
+              </div>
+            </div>
+          </div>
+        </AnimatedText>
       </div>
 
       {/* Add Review Modal */}

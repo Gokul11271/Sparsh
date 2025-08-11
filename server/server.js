@@ -13,7 +13,7 @@ const imageRoutes = require("./routes/images");
 const galleryRoutes = require("./routes/gallery");
 const reviewRoutes = require("./routes/reviews");
 const analyticsRoutes = require("./routes/analytics");
-// const setupRoutes = require("./routes/setup"); // Removed until file exists
+ // Removed until file exists
 
 dotenv.config();
 
@@ -80,7 +80,7 @@ app.use("/api/images", imageRoutes);
 app.use("/api/gallery", galleryRoutes);
 app.use("/api/reviews", reviewRoutes);
 app.use("/api/analytics", analyticsRoutes);
-// app.use("/api/setup", setupRoutes); // Only add when file exists
+
 
 // Health check
 app.get("/api/health", (req, res) => {
