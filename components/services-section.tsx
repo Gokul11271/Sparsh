@@ -136,9 +136,16 @@ export function ServicesSection() {
             </p>
             
             <Link href="#contact" scroll={true}>
-  <LiquidButton variant="outline" size="lg">
+  <div className="flex justify-center px-4">
+  <LiquidButton
+    variant="outline"
+    size="lg"
+    className="w-full sm:w-auto text-sm sm:text-base md:text-lg px-4 sm:px-6 md:px-8 py-2 md:py-3"
+  >
     Schedule Free Consultation
   </LiquidButton>
+</div>
+
 </Link>
           </div>
         </AnimatedText>

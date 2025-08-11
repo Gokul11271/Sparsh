@@ -179,32 +179,51 @@ export function TestimonialsSection() {
         </AnimatedText>
 
         {/* Statistics */}
-        <AnimatedText delay={800}>
-          <div className="text-center">
-            <div className="inline-flex items-center space-x-12 bg-white rounded-3xl p-10 shadow-2xl border border-[#ef9343]/20">
-              <div className="text-center">
-                <div className="text-4xl font-bold bg-gradient-to-r from-[#ef9343] to-[#603202] bg-clip-text text-transparent">
-                  2K+
-                </div>
-                <div className="text-[#603202]/70 font-medium">Happy Clients</div>
-              </div>
-              <div className="w-px h-16 bg-[#ef9343]/30"></div>
-              <div className="text-center">
-                <div className="text-4xl font-bold bg-gradient-to-r from-[#603202] to-[#ef9343] bg-clip-text text-transparent">
-                  22+
-                </div>
-                <div className="text-[#603202]/70 font-medium">Years Experience</div>
-              </div>
-              <div className="w-px h-16 bg-[#ef9343]/30"></div>
-              <div className="text-center">
-                <div className="text-4xl font-bold bg-gradient-to-r from-[#ef9343] to-[#603202] bg-clip-text text-transparent">
-                  99%
-                </div>
-                <div className="text-[#603202]/70 font-medium">Satisfaction Rate</div>
-              </div>
-            </div>
-          </div>
-        </AnimatedText>
+      <AnimatedText delay={800}>
+  <div className="text-center px-4">
+    <div className="flex flex-col md:flex-row items-center justify-center bg-white rounded-3xl p-6 md:p-10 shadow-2xl border border-[#ef9343]/100 gap-8 md:gap-12">
+
+      {/* Stat 1 */}
+      <div className="text-center">
+        <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-[#ef9343] to-[#603202] bg-clip-text text-transparent">
+          2K+
+        </div>
+        <div className="text-[#603202]/70 font-medium text-base md:text-lg">
+          Happy Clients
+        </div>
+      </div>
+
+      {/* Divider */}
+      <div className="hidden md:block w-px h-16 bg-[#ef9343]/30"></div>
+
+      {/* Stat 2 */}
+      <div className="text-center">
+        <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-[#603202] to-[#ef9343] bg-clip-text text-transparent">
+          22+
+        </div>
+        <div className="text-[#603202]/70 font-medium text-base md:text-lg">
+          Years Experience
+        </div>
+      </div>
+
+      {/* Divider */}
+      <div className="hidden md:block w-px h-16 bg-[#ef9343]/30"></div>
+
+      {/* Stat 3 */}
+      <div className="text-center">
+        <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-[#ef9343] to-[#603202] bg-clip-text text-transparent">
+          99%
+        </div>
+        <div className="text-[#603202]/70 font-medium text-base md:text-lg">
+          Satisfaction Rate
+        </div>
+      </div>
+
+    </div>
+  </div>
+</AnimatedText>
+
+
       </div>
 
       {/* Add Review Modal */}
