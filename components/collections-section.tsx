@@ -8,9 +8,9 @@ import { AnimatedText } from "./animated-text"
 import { LiquidButton } from "./liquid-button"
 
 // 👇 Import images statically (they're inside components/gallery/image/)
-import img1 from "@/components/image/g2.jpg"
-import img2 from "@/components/image/green.jpg"
-import img3 from "@/components/image/fullblue.jpg"
+import img1 from "@/components/image/red.jpg"
+import img2 from "@/components/image/fullblue.jpg"
+import img3 from "@/components/image/green.jpg"
 import img4 from "@/components/image/pur22prem.jpg"
 import img5 from "@/components/image/purple.jpg"
 import img6 from "@/components/image/red.jpg"
@@ -22,7 +22,7 @@ const collections = imageSources.map((image, index) => ({
   name: `Collection ${index + 1}`,
   description: "Exquisite handcrafted designs for elegant occasions",
   image: image,
-  price: `Starting ₹${(index + 1) * 5000}`,
+  price: `Starting from ₹${(index + 1) * 5000}`,
   rating: 5,
   featured: index % 2 === 0,
 }))

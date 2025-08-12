@@ -1,6 +1,8 @@
+'use client'
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { MapPin, Phone, Mail, Clock, Instagram, Facebook, Twitter } from "lucide-react"
+import { MapPin, Phone, Mail, Clock, Instagram, Facebook, Twitter, MessageCircle } from "lucide-react"
 import Link from "next/link"
 import { AnimatedText } from "./animated-text"
 import { LiquidButton } from "./liquid-button"
@@ -11,24 +13,35 @@ const contactInfo = [
     title: "Visit Our Boutique",
     details: ["135 A, Above ICICI ATM", "Hope College, Avinashi Rd", "Coimbatore, Tamil Nadu 641004"],
     action: "Get Directions",
+    href: "https://goo.gl/maps/HYZ8cV8VQkzKpUJN9",
   },
   {
     icon: Phone,
     title: "Call Us",
-    details: ["098657 66573", "For appointments & inquiries"],
+    details: ["+91 99940 56184", "For appointments & inquiries"],
     action: "Call Now",
+    href: "tel:+919994056184",
   },
   {
     icon: Mail,
     title: "Email Us",
     details: ["hello@sparshdesign.com", "appointments@sparshdesign.com"],
     action: "Send Email",
+    href: "mailto:hello@sparshdesign.com",
+  },
+  {
+    icon: MessageCircle,
+    title: "WhatsApp Us",
+    details: ["Chat instantly with our team"],
+    action: "Message on WhatsApp",
+    href: "https://wa.me/919994056184",
   },
   {
     icon: Clock,
     title: "Business Hours",
     details: ["Mon - Sat: 10:00 AM - 8:00 PM", "Sunday: 12:00 PM - 6:00 PM"],
     action: "Book Appointment",
+    href: "#contact",
   },
 ]
 
@@ -36,12 +49,15 @@ const socialLinks = [
   { icon: Instagram, href: "https://www.instagram.com/sparsh_designer/", label: "Instagram", color: "from-pink-500 to-purple-600" },
   { icon: Facebook, href: "https://www.facebook.com/sparshcbe/", label: "Facebook", color: "from-blue-500 to-blue-700" },
   { icon: Twitter, href: "#", label: "Twitter", color: "from-blue-400 to-blue-600" },
+  { icon: MessageCircle, href: "https://wa.me/919994056184", label: "WhatsApp", color: "from-green-500 to-green-700" },
 ]
 
 export function ContactSection() {
   return (
     <section id="contact" className="py-20 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Heading */}
         <div className="text-center space-y-6 mb-16">
           <AnimatedText>
             <Badge className="w-fit mx-auto bg-[#ef9343]/20 text-[#603202] hover:bg-[#ef9343]/30 border-[#ef9343]/30">
@@ -66,6 +82,7 @@ export function ContactSection() {
           </AnimatedText>
         </div>
 
+        {/* Contact Info Cards */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           {contactInfo.map((info, index) => {
             const Icon = info.icon
@@ -90,9 +107,13 @@ export function ContactSection() {
                       ))}
                     </div>
 
-                    <button className="text-[#ef9343] hover:text-[#603202] transition-colors duration-300 font-medium text-sm">
+                    <Link
+                      href={info.href}
+                      target={info.href.startsWith("http") ? "_blank" : undefined}
+                      className="text-[#ef9343] hover:text-[#603202] transition-colors duration-300 font-medium text-sm"
+                    >
                       {info.action}
-                    </button>
+                    </Link>
                   </CardContent>
                 </Card>
               </AnimatedText>
@@ -109,41 +130,34 @@ export function ContactSection() {
               elevate your confidence to new heights.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <LiquidButton variant="secondary" size="lg">
+              <LiquidButton 
+                variant="secondary" 
+                size="lg"
+                onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+              >
                 Book Free Consultation
               </LiquidButton>
               <LiquidButton
                 variant="outline"
                 size="lg"
                 className="border-white text-white hover:bg-white hover:text-[#603202]"
+                onClick={() => window.open("https://goo.gl/maps/HYZ8cV8VQkzKpUJN9", "_blank")}
               >
                 Visit Our Boutique
+              </LiquidButton>
+              <LiquidButton
+                variant="secondary"
+                size="lg"
+                className="bg-green-500 hover:bg-green-600"
+                onClick={() => window.open("https://wa.me/919994056184", "_blank")}
+              >
+                WhatsApp Us
               </LiquidButton>
             </div>
           </div>
         </AnimatedText>
 
-        {/* map */}
-        {/* <AnimatedText delay={1000}>
-  <div className="mt-10 md:mt-16">
-    <h2 className="text-center text-2xl md:text-3xl font-bold text-[#603202] mb-6">
-      Visit Our Boutique
-    </h2>
-    <div className="w-full h-[300px] md:h-[450px] rounded-3xl overflow-hidden shadow-lg border border-[#ef9343]/30">
-      <iframe
-        title="Sparsh Ladies Designer Boutique Location"
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.336936594148!2d76.9869790757847!3d11.018664554257384!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba859bc8f158cc3%3A0xcbd9cf9c41573541!2s135%20A%2C%20Above%20Icici%20Atm%2C%20Hope%20College%2C%20Avinashi%20Rd%2C%20Coimbatore%2C%20Tamil%20Nadu%20641004!5e0!3m2!1sen!2sin!4v1720879055821!5m2!1sen!2sin"
-        width="100%"
-        height="100%"
-        style={{ border: 0 }}
-        allowFullScreen   // ✅ Correct usage: no quotes or value
-        loading="lazy"
-        referrerPolicy="no-referrer-when-downgrade"
-      ></iframe>
-    </div>
-  </div>
-</AnimatedText> */}
-{/* Social Media */}
+        {/* Social Media */}
         <AnimatedText delay={800}>
           <div className="text-center mt-16">
             <h4 className="text-xl font-semibold text-[#603202] mb-6">Follow Our Journey</h4>
@@ -154,6 +168,7 @@ export function ContactSection() {
                   <Link
                     key={index}
                     href={social.href}
+                    target="_blank"
                     className={`w-14 h-14 bg-gradient-to-br ${social.color} rounded-2xl flex items-center justify-center text-white hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-xl`}
                     aria-label={social.label}
                   >
@@ -164,7 +179,6 @@ export function ContactSection() {
             </div>
           </div>
         </AnimatedText>
-
       </div>
     </section>
   )
