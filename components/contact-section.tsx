@@ -11,9 +11,13 @@ const contactInfo = [
   {
     icon: MapPin,
     title: "Visit Our Boutique",
-    details: ["135 A, Above ICICI ATM", "Hope College, Avinashi Rd", "Coimbatore, Tamil Nadu 641004"],
+    details: [
+      "135 A, Above ICICI ATM",
+      "Hope College, Avinashi Rd",
+      "Coimbatore, Tamil Nadu 641004"
+    ],
     action: "Get Directions",
-    href: "https://goo.gl/maps/HYZ8cV8VQkzKpUJN9",
+    href: "https://www.google.co.in/maps/dir/Coimbatore,+Tamil+Nadu/135+A,+Avinashi+Rd,+above+ICICI+ATM,+Peelamedu,+Sri+Nagar,+Hope+College,+Coimbatore,+Tamil+Nadu+641004/@11.0118875,76.9477892,13z/data=!3m2!4b1!5s0x3ba8578572542575:0x64d1c1d491f9fa50!4m14!4m13!1m5!1m1!1s0x3ba859af2f971cb5:0x2fc1c81e183ed282!2m2!1d76.9588876!2d10.9973691!1m5!1m1!1s0x3ba8578574c70215:0x82ba9fdcdf0806d7!2m2!1d77.0193824!2d11.0259674!3e0?hl=en-in&entry=ttu&g_ep=EgoyMDI1MDczMC4wIKXMDSoASAFQAw%3D%3D"
   },
   {
     icon: Phone,
@@ -49,7 +53,7 @@ const socialLinks = [
   { icon: Instagram, href: "https://www.instagram.com/sparsh_designer/", label: "Instagram", color: "from-pink-500 to-purple-600" },
   { icon: Facebook, href: "https://www.facebook.com/sparshcbe/", label: "Facebook", color: "from-blue-500 to-blue-700" },
   { icon: Twitter, href: "#", label: "Twitter", color: "from-blue-400 to-blue-600" },
-  { icon: MessageCircle, href: "https://wa.me/919994056184", label: "WhatsApp", color: "from-green-500 to-green-700" },
+  { icon: MessageCircle, href: "https://wa.me/919994056184", label: "WhatsApp", color: "from-green-500 to-green-700" }, // ✅ WhatsApp in socials
 ]
 
 export function ContactSection() {
@@ -141,7 +145,7 @@ export function ContactSection() {
                 variant="outline"
                 size="lg"
                 className="border-white text-white hover:bg-white hover:text-[#603202]"
-                onClick={() => window.open("https://goo.gl/maps/HYZ8cV8VQkzKpUJN9", "_blank")}
+                onClick={() => window.open(contactInfo[0].href, "_blank")}
               >
                 Visit Our Boutique
               </LiquidButton>
