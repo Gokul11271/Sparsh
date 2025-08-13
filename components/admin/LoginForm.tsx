@@ -59,7 +59,7 @@ export default function LoginForm() {
                 </div>
                 <div>
                   <h1 className="text-3xl font-bold text-[#603202]">SPARSH</h1>
-                  <p className="text-xs text-[#603202]/70 tracking-[0.2em]">DESIGN</p>
+                  <p className="text-xs text-[#603202]/70 tracking-[0.2em]">DESIGN .</p>
                 </div>
               </div>
               <h2 className="text-2xl font-semibold text-[#603202] mb-2">Admin Login</h2>
