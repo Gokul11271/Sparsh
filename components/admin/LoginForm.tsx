@@ -63,7 +63,7 @@ export default function LoginForm() {
                 </div>
               </div>
               <h2 className="text-2xl font-semibold text-[#603202] mb-2">Admin Login</h2>
-              <p className="text-[#603202]/70">Access your dashboard</p>
+              <p className="text-[#603202]/70">Access your  dashboard</p>
             </div>
 
             {/* Login Form */}
