@@ -33,17 +33,38 @@ app.use(
   })
 );
 
+// const allowedOrigins = [
+//   process.env.CLIENT_URL || "http://localhost:3000",
+//   "http://localhost:5173",
+//   "https://sparsh--frontend.vercel.app/",
+//   "https://sparsh-frontend-3scz5v2ow-gokul-rs-projects-d666a7f0.vercel.app/",
+// ];
 const allowedOrigins = [
   process.env.CLIENT_URL || "http://localhost:3000",
   "http://localhost:5173",
-  "https://sparsh--frontend.vercel.app/",
-  "https://sparsh-frontend-3scz5v2ow-gokul-rs-projects-d666a7f0.vercel.app/",
+  "https://sparsh--frontend.vercel.app",
+  "https://sparsh-frontend-3scz5v2ow-gokul-rs-projects-d666a7f0.vercel.app",
 ];
 
-app.use(cors({
-  origin: allowedOrigins,
-  credentials: true,
-}));  
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      if (!origin) return callback(null, true); // allow Postman/curl
+      if (allowedOrigins.includes(origin)) {
+        return callback(null, true);
+      } else {
+        return callback(new Error("CORS policy: Not allowed by server"), false);
+      }
+    },
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
+  })
+);
+
+// app.use(cors({
+//   origin: allowedOrigins,
+//   credentials: true,
+// }));  
 
 const io = socketIo(server, {
   cors: {
