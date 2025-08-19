@@ -24,6 +24,7 @@ app.use(
   cors({
     origin:
       "https://sparsh-frontend-3scz5v2ow-gokul-rs-projects-d666a7f0.vercel.app",
+      
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
