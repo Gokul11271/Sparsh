@@ -122,25 +122,70 @@ router.get("/public", async (req, res) => {
 // });
 router.post("/submit", upload.single("image"), async (req, res) => {
   try {
-    console.log("Body:", req.body);
-    console.log("File:", req.file); // should be undefined if no file
+    const { name, email, role, location, content, rating } = req.body;
 
+    // Validate required fields
+    if (!name || !email || !role || !location || !content || !rating) {
+      return res.status(400).json({
+        success: false,
+        message: "All fields are required",
+      });
+    }
+
+    // Validate rating
+    const ratingNum = Number.parseInt(rating);
+    if (ratingNum < 1 || ratingNum > 5) {
+      return res.status(400).json({
+        success: false,
+        message: "Rating must be between 1 and 5",
+      });
+    }
+
+    // Check for duplicate review by email
+    const existingReview = await Review.findOne({ email: email.toLowerCase() });
+    if (existingReview) {
+      return res.status(400).json({
+        success: false,
+        message: "You have already submitted a review. Thank you!",
+      });
+    }
+
+    // Get client IP (Render/NGINX passes via headers)
+    const clientIP =
+      req.headers["x-forwarded-for"]?.split(",")[0] ||
+      req.headers["x-real-ip"] ||
+      req.connection.remoteAddress ||
+      "unknown";
+
+    // Create review document
     const review = new Review({
-      name: req.body.name,
-      email: req.body.email,
-      content: req.body.content,
-      image: req.file ? req.file.path : "", // safe for no image
+      name: name.trim(),
+      email: email.toLowerCase().trim(),
+      role: role.trim(),
+      location: location.trim(),
+      content: content.trim(),
+      rating: ratingNum,
+      image: req.file ? req.file.path : "",
+      ipAddress: clientIP,
     });
 
     await review.save();
-    res
-      .status(201)
-      .json({ success: true, message: "Review submitted successfully!" });
+
+    res.json({
+      success: true,
+      message:
+        "Thank you for your review! It will be published after approval.",
+      reviewId: review._id,
+    });
   } catch (error) {
-    console.error(error);
-    res.status(400).json({ success: false, message: error.message });
+    console.error("Submit review error:", error);
+    res.status(500).json({
+      success: false,
+      message: "Error submitting review. Please try again.",
+    });
   }
 });
+
 
 
 // Admin routes (require authentication)
