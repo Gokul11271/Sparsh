@@ -24,7 +24,7 @@ const allowedOrigins = [
   "http://localhost:3000",
   "http://localhost:5173",
   "https://sparsh-frontend-3scz5v2ow-gokul-rs-projects-d666a7f0.vercel.app",
-  "https://sparsh--frontend.vercel.app/",
+  "https://sparsh--frontend.vercel.app",
 ];
 
 app.use(
