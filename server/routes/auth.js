@@ -126,7 +126,7 @@ router.get("/me", auth, async (req, res) => {
 router.post("/logout", (req, res) => {
   res.json({
     success: true,
-    message: "Logged out successfully",
+    message: "Logged out    successfully",
   })
 })
 
