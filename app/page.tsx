@@ -15,7 +15,7 @@ import GallerySection from "@/components/gallery/GallerySection"
 
 export default function LandingPage() {
   useEffect(() => {
-    const trackVisit = async () => {
+    const trackVisit = async () => { 
       try {
         await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/visitors/track`, {
           sessionId: crypto.randomUUID(),
