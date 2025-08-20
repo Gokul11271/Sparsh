@@ -1,6 +1,6 @@
 import axios from "axios"
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "https://sparsh-backend-n1lf.onrender.com/api"
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "https://sparsh-backend-n1lf.onrender.com/api/visitors/track"
 
 // Generate unique session ID
 const generateSessionId = (): string => {
