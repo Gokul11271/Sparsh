@@ -15,9 +15,7 @@ const reviewRoutes = require("./routes/reviews");
 const analyticsRoutes = require("./routes/analytics");
 // Removed until file exists
 
-// newly added 19 and 20
-const visitorRoutes = require("./routes/visitors");
-app.use("/api/visitors", visitorRoutes);
+
 
 
 dotenv.config();
