@@ -177,6 +177,8 @@ export function Header() {
                 { name: "Home", href: "#home" },
                 { name: "About", href: "#about" },
                 { name: "Contact", href: "#contact" },
+                 { name: "Admin Login", href: "/admin/login" },
+                 { name: "Gallery", href: "/gallery" },
               ].map((item) => (
                 <Link
                   key={item.name}
