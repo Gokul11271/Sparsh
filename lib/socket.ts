@@ -7,7 +7,7 @@ class SocketManager {
   private url: string
 
   constructor() {
-    this.url = process.env.NEXT_PUBLIC_SOCKET_URL || "http://localhost:5000"
+    this.url = process.env.NEXT_PUBLIC_SOCKET_URL || "https://sparsh-backend-n1lf.onrender.com"
   }
 
   connect() {
