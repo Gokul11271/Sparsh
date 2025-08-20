@@ -19,7 +19,7 @@ export default function LandingPage() {
       userAgent: navigator.userAgent,
       referrer: document.referrer,
       sessionId: crypto.randomUUID()
-    }).catch(err => console.log("Analytics error:", err))
+    }).catch(err => console.log("Analytics aioooooooooooooooooooooooooooooo error:", err))
   }, [])
 
   return (
