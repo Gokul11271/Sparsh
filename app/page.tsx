@@ -13,14 +13,15 @@ import axios from "axios"
 
 export default function LandingPage() {
 useEffect(() => {
+  console.log("Triggering analytics tracking...");
   axios.post("https://sparsh-backend-n1lf.onrender.com/api/analytics/track", {
     page: "LandingPage",
     userAgent: navigator.userAgent,
     referrer: document.referrer,
     sessionId: crypto.randomUUID()
   })
-  .then(res => console.log("Analytics tracked successfully:", res.data))
-  .catch(err => console.error("Analytics tracking error:", err));
+  .then(res => console.log("Response:", res.data))
+  .catch(err => console.error("Analytics error:", err));
 }, []);
 
 
