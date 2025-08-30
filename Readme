@@ -161,7 +161,7 @@ MongoDB Real-Time Updates
 
 1. Clone the repository
       ```bash
-      git clone https://github.com/your-username/streamline-landing.git
+      git clone https://github.com/your-username
       cd streamline-landing
       ```
 2. Install dependencies
