@@ -190,8 +190,11 @@ graph TD
 ## License
 
 This project is proprietary and developed for a UK-based client. Not for public distribution.
+<<<<<<< HEAD
 
 ---
 
 > **Impress at a glance:**  
 > Streamline Landing demonstrates advanced full-stack engineering, mobile-first design, real-time interactivity, and secure, scalable architecture—making it a standout project for interviews and professional portfolios.
+=======
+>>>>>>> c4f96cc7a477936a038575d057e78db96f4a61a3
