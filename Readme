@@ -1,0 +1,115 @@
+# Streamline Landing
+
+This project is a full-stack web application developed as a freelance project for a UK-based client. It features a modern landing page with real-time data updates, media management via Cloudinary, and a robust backend powered by MongoDB.
+
+---
+
+## Table of Contents
+
+- [Project Overview](#project-overview)
+- [Features](#features)
+- [Frontend Components](#frontend-components)
+- [Backend Components](#backend-components)
+- [API Endpoints](#api-endpoints)
+- [Cloudinary Integration](#cloudinary-integration)
+- [MongoDB Real-Time Updates](#mongodb-real-time-updates)
+- [Setup & Installation](#setup--installation)
+
+---
+
+## Project Overview
+
+Streamline Landing is designed to provide a seamless user experience for visitors, with dynamic content management and real-time updates. The backend is built with Node.js/Express, and the frontend uses React. Media assets are managed via Cloudinary, and MongoDB is used for data storage with real-time change streams.
+
+---
+
+## Features
+
+- Responsive landing page UI
+- User authentication (login/register)
+- Real-time updates for content and notifications
+- Media upload and management via Cloudinary
+- RESTful API for all data operations
+- Admin dashboard for content management
+- Contact form with email notifications
+
+---
+
+## Frontend Components
+
+- **LandingPage**: Main entry point, displays hero section, features, and call-to-action.
+- **Navbar**: Responsive navigation bar with links to sections.
+- **FeaturesSection**: Highlights key features of the service.
+- **Gallery**: Displays images/videos fetched from Cloudinary.
+- **ContactForm**: Allows users to send messages; integrates with backend API.
+- **Login/Register**: User authentication forms.
+- **AdminDashboard**: Restricted area for admins to manage content and view real-time updates.
+- **NotificationBanner**: Shows real-time notifications pushed from backend.
+
+---
+
+## Backend Components
+
+- **Express Server**: Handles API requests and serves frontend.
+- **Auth Controller**: Manages user registration, login, and JWT authentication.
+- **Content Controller**: CRUD operations for landing page content.
+- **Gallery Controller**: Handles media uploads to Cloudinary and retrieval.
+- **Contact Controller**: Processes contact form submissions and sends emails.
+- **Admin Controller**: Admin-specific endpoints for content and user management.
+- **MongoDB Change Stream Service**: Listens for real-time changes and pushes updates to frontend via WebSockets (Socket.io).
+
+---
+
+## API Endpoints
+
+| Method | Endpoint                | Description                        | Auth Required |
+|--------|-------------------------|------------------------------------|--------------|
+| POST   | /api/auth/register      | Register new user                  | No           |
+| POST   | /api/auth/login         | User login                         | No           |
+| GET    | /api/content            | Get landing page content           | No           |
+| POST   | /api/content            | Create new content                 | Yes (Admin)  |
+| PUT    | /api/content/:id        | Update content                     | Yes (Admin)  |
+| DELETE | /api/content/:id        | Delete content                     | Yes (Admin)  |
+| GET    | /api/gallery            | List gallery media                 | No           |
+| POST   | /api/gallery/upload     | Upload media to Cloudinary         | Yes (Admin)  |
+| DELETE | /api/gallery/:id        | Delete media from Cloudinary       | Yes (Admin)  |
+| POST   | /api/contact            | Submit contact form                | No           |
+| GET    | /api/admin/notifications| Get real-time notifications        | Yes (Admin)  |
+
+---
+
+## Cloudinary Integration
+
+- Media uploads (images/videos) are handled via the `/api/gallery/upload` endpoint.
+- Uploaded files are stored in Cloudinary and URLs are saved in MongoDB.
+- Gallery component fetches and displays media from Cloudinary.
+
+---
+
+## MongoDB Real-Time Updates
+
+- The backend uses MongoDB Change Streams to listen for changes in content and gallery collections.
+- Real-time updates are pushed to the frontend using Socket.io.
+- Admin dashboard and notification banner receive instant updates when content changes.
+
+---
+
+## Setup & Installation
+
+1. **Clone the repository**
+2. **Install dependencies**  
+    - Backend: `npm install`  
+    - Frontend: `cd client && npm install`
+3. **Configure environment variables**  
+    - MongoDB URI, Cloudinary credentials, JWT secret, etc.
+4. **Run the application**  
+    - Backend: `npm run dev`  
+    - Frontend: `cd client && npm start`
+
+---
+
+## License
+
+This project is proprietary and developed for a UK-based client. Not for public distribution.
+
+![alt text](sparsh-frontend-3scz5v2ow-gokul-rs-projects-d666a7f0.vercel.app_.png)

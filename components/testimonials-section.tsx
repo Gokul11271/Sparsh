@@ -101,7 +101,7 @@ export function TestimonialsSection() {
   const fetchReviews = async () => {
   try {
     // Remove trailing slash or /api from base to avoid duplication
-    let apiBase = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
+    let apiBase = process.env.NEXT_PUBLIC_API_URL || "https://sparsh-backend-n1lf.onrender.com";
     apiBase = apiBase.replace(/\/+$/, ""); // remove trailing slash
     apiBase = apiBase.replace(/\/api$/, ""); // remove ending /api if exists
 
