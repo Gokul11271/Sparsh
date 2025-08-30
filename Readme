@@ -1,6 +1,6 @@
-# Streamline Landing
+ Streamline Landing
 
-## Comprehensive Project Documentation
+Comprehensive Project Documentation
 
 Streamline Landing is a production-grade, full-stack web application built for a UK-based client, designed to showcase modern web development best practices. The project delivers a visually compelling, mobile-responsive landing page with real-time interactivity, robust media management, and a secure, scalable backend. Its architecture and feature set are crafted to impress technical interviewers and stakeholders alike.
 
@@ -9,7 +9,7 @@ Streamline Landing is a production-grade, full-stack web application built for a
 ![image alt](https://raw.githubusercontent.com/Gokul11271/Sparsh/1ab364f8db3199025de328d9db935fe23cf5a3e0/sparsh-frontend-3scz5v2ow-gokul-rs-projects-d666a7f0.vercel.app_.png)
 
 
-### 🚀 Key Highlights
+🚀 Key Highlights
 
 - Mobile-First & Responsive: Fully responsive UI/UX, optimized for all devices using CSS-in-JS and utility-first frameworks (e.g., Tailwind CSS or styled-components).
 - Modern Tech Stack: React (frontend), Node.js/Express (backend), MongoDB (database), Cloudinary (media), Socket.io (real-time), JWT (auth).
@@ -22,7 +22,7 @@ Streamline Landing is a production-grade, full-stack web application built for a
 
 ---
 
-## Table of Contents
+Table of Contents
 
 - [Project Overview](#project-overview)
 - [Architecture](#architecture)
@@ -40,13 +40,13 @@ Streamline Landing is a production-grade, full-stack web application built for a
 
 ---
 
-## Project Overview
+ Project Overview
 
 Streamline Landing is engineered to deliver a seamless, interactive experience for users and administrators. The application leverages a decoupled architecture, separating concerns between the frontend and backend, and integrates third-party services for enhanced scalability and maintainability.
 
 ---
 
-## Architecture
+ Architecture
 
 ```mermaid
 graph TD
@@ -64,7 +64,7 @@ graph TD
 
 ---
 
-## Features
+Features
 
 - Responsive Landing Page: Adapts to all screen sizes, touch-friendly, and optimized for performance.
 - Authentication: Secure login/register with JWT, password hashing, and session management.
@@ -77,7 +77,7 @@ graph TD
 
 ---
 
-## Mobile Responsiveness
+Mobile Responsiveness
 
 - Fluid Layouts: Uses CSS Grid/Flexbox for adaptive layouts.
 - Touch Interactions: Mobile-friendly buttons, gestures, and input fields.
@@ -86,7 +86,7 @@ graph TD
 
 ---
 
-## Frontend Components
+Frontend Components
 
 - LandingPage: Hero section, feature highlights, and call-to-action.
 - Navbar: Sticky, collapsible, and accessible navigation.
@@ -99,7 +99,7 @@ graph TD
 
 ---
 
-## Backend Components
+Backend Components
 
 - Express Server: Modular routing, middleware, and error handling.
 - Auth Controller: Registration, login, JWT issuance, and role checks.
@@ -111,7 +111,7 @@ graph TD
 
 ---
 
-## API Endpoints
+API Endpoints
 
 | Method | Endpoint                | Description                        | Auth Required |
 |--------|-------------------------|------------------------------------|--------------|
@@ -129,7 +129,7 @@ graph TD
 
 ---
 
-## Cloudinary Integration
+ Cloudinary Integration
 
 - Upload: `/api/gallery/upload` accepts multipart/form-data, validates file types, and uploads to Cloudinary.
 - Transformation: Images/videos are auto-optimized for device and bandwidth.
@@ -138,7 +138,7 @@ graph TD
 
 ---
 
-## MongoDB Real-Time Updates
+MongoDB Real-Time Updates
 
 - Change Streams: Listens for insert/update/delete on content and gallery collections.
 - WebSockets: Pushes updates to connected clients (users/admins) instantly.
@@ -146,7 +146,7 @@ graph TD
 
 ---
 
-## Security & Best Practices
+ Security & Best Practices
 
 - Environment Variables: Sensitive data managed via `.env` files.
 - Input Validation: Server-side and client-side validation for all endpoints.
@@ -157,7 +157,7 @@ graph TD
 
 ---
 
-## Setup & Installation
+ Setup & Installation
 
 1. Clone the repository
       ```bash
@@ -182,7 +182,7 @@ graph TD
 
 ---
 
-## Development & Deployment
+ Development & Deployment
 
 - Development: Hot-reloading, ESLint/Prettier, and unit/integration tests.
 - Deployment: Ready for platforms like Vercel, Netlify (frontend), and Heroku, Render, or DigitalOcean (backend).
@@ -190,22 +190,16 @@ graph TD
 
 ---
 
-## License
+ License
 
 This project is proprietary and developed for a UK-based client. Not for public distribution.
 <<<<<<< HEAD
 
 ---
 
-> **Impress at a glance:**  
+> Impress at a glance:
 > Streamline Landing demonstrates advanced full-stack engineering, mobile-first design, real-time interactivity, and secure, scalable architecture—making it a standout project for interviews and professional portfolios.
 
-=======
->>>>>>> db145cb8af7a23c95d7c895b2e3a6a853bb72414
-
-
-
----
 
 ![Streamline Landing Screenshot](https://raw.githubusercontent.com/your-username/streamline-landing/main/path/to/screenshot.png)
 
