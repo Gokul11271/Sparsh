@@ -8,14 +8,14 @@ Streamline Landing is a production-grade, full-stack web application built for a
 
 ### 🚀 Key Highlights
 
-- **Mobile-First & Responsive:** Fully responsive UI/UX, optimized for all devices using CSS-in-JS and utility-first frameworks (e.g., Tailwind CSS or styled-components).
-- **Modern Tech Stack:** React (frontend), Node.js/Express (backend), MongoDB (database), Cloudinary (media), Socket.io (real-time), JWT (auth).
-- **Real-Time Experience:** Live content and notification updates via MongoDB Change Streams and WebSockets.
-- **Media Management:** Seamless image/video uploads, transformations, and delivery through Cloudinary.
-- **Secure Authentication:** JWT-based user and admin authentication, with role-based access control.
-- **Admin Dashboard:** Intuitive admin panel for content, media, and user management with instant feedback.
-- **Production-Ready:** Environment-based configuration, error handling, validation, and security best practices.
-- **Attractive UI:** Clean, modern design with engaging animations and accessibility in mind.
+- Mobile-First & Responsive: Fully responsive UI/UX, optimized for all devices using CSS-in-JS and utility-first frameworks (e.g., Tailwind CSS or styled-components).
+- Modern Tech Stack: React (frontend), Node.js/Express (backend), MongoDB (database), Cloudinary (media), Socket.io (real-time), JWT (auth).
+- Real-Time Experience: Live content and notification updates via MongoDB Change Streams and WebSockets.
+- Media Management: Seamless image/video uploads, transformations, and delivery through Cloudinary.
+- Secure Authentication: JWT-based user and admin authentication, with role-based access control.
+- Admin Dashboard: Intuitive admin panel for content, media, and user management with instant feedback.
+- Production-Ready: Environment-based configuration, error handling, validation, and security best practices.
+- Attractive UI: Clean, modern design with engaging animations and accessibility in mind.
 
 ---
 
@@ -47,64 +47,64 @@ Streamline Landing is engineered to deliver a seamless, interactive experience f
 
 ```mermaid
 graph TD
-    A[User Device] -->|HTTPS| B[React Frontend]
-    B -->|REST/Socket.io| C[Node.js/Express API]
-    C -->|Mongoose| D[MongoDB]
-    C -->|SDK| E[Cloudinary]
-    C -->|Socket.io| B
+     A[User Device] -->|HTTPS| B[React Frontend]
+     B -->|REST/Socket.io| C[Node.js/Express API]
+     C -->|Mongoose| D[MongoDB]
+     C -->|SDK| E[Cloudinary]
+     C -->|Socket.io| B
 ```
 
-- **Frontend:** React SPA, responsive design, state managed via Context API or Redux.
-- **Backend:** RESTful API, real-time events via Socket.io, modular controllers/services.
-- **Database:** MongoDB with Change Streams for real-time data.
-- **Media:** Cloudinary for storage, transformation, and CDN delivery.
+- Frontend: React SPA, responsive design, state managed via Context API or Redux.
+- Backend: RESTful API, real-time events via Socket.io, modular controllers/services.
+- Database: MongoDB with Change Streams for real-time data.
+- Media: Cloudinary for storage, transformation, and CDN delivery.
 
 ---
 
 ## Features
 
-- **Responsive Landing Page:** Adapts to all screen sizes, touch-friendly, and optimized for performance.
-- **Authentication:** Secure login/register with JWT, password hashing, and session management.
-- **Real-Time Updates:** Instant content and notification delivery using WebSockets.
-- **Media Gallery:** Upload, preview, and manage images/videos with drag-and-drop support.
-- **Admin Dashboard:** Role-based access, content moderation, and analytics.
-- **Contact Form:** Validated submissions with email notifications (e.g., via Nodemailer).
-- **Accessibility:** ARIA roles, keyboard navigation, and color contrast compliance.
-- **SEO Optimized:** Meta tags, Open Graph, and server-side rendering support (optional).
+- Responsive Landing Page: Adapts to all screen sizes, touch-friendly, and optimized for performance.
+- Authentication: Secure login/register with JWT, password hashing, and session management.
+- Real-Time Updates: Instant content and notification delivery using WebSockets.
+- Media Gallery: Upload, preview, and manage images/videos with drag-and-drop support.
+- Admin Dashboard: Role-based access, content moderation, and analytics.
+- Contact Form: Validated submissions with email notifications (e.g., via Nodemailer).
+- Accessibility: ARIA roles, keyboard navigation, and color contrast compliance.
+- SEO Optimized: Meta tags, Open Graph, and server-side rendering support (optional).
 
 ---
 
 ## Mobile Responsiveness
 
-- **Fluid Layouts:** Uses CSS Grid/Flexbox for adaptive layouts.
-- **Touch Interactions:** Mobile-friendly buttons, gestures, and input fields.
-- **Performance:** Lazy loading, image optimization, and minimal bundle size.
-- **Testing:** Responsive tested across major devices and browsers.
+- Fluid Layouts: Uses CSS Grid/Flexbox for adaptive layouts.
+- Touch Interactions: Mobile-friendly buttons, gestures, and input fields.
+- Performance: Lazy loading, image optimization, and minimal bundle size.
+- Testing: Responsive tested across major devices and browsers.
 
 ---
 
 ## Frontend Components
 
-- **LandingPage:** Hero section, feature highlights, and call-to-action.
-- **Navbar:** Sticky, collapsible, and accessible navigation.
-- **FeaturesSection:** Animated feature cards with icons.
-- **Gallery:** Responsive grid, lightbox modal, and lazy-loaded media.
-- **ContactForm:** Real-time validation, success/error feedback.
-- **Login/Register:** Secure forms with password strength indicators.
-- **AdminDashboard:** Content/media/user management, real-time stats.
-- **NotificationBanner:** Live updates for users/admins.
+- LandingPage: Hero section, feature highlights, and call-to-action.
+- Navbar: Sticky, collapsible, and accessible navigation.
+- FeaturesSection: Animated feature cards with icons.
+- Gallery: Responsive grid, lightbox modal, and lazy-loaded media.
+- ContactForm: Real-time validation, success/error feedback.
+- Login/Register: Secure forms with password strength indicators.
+- AdminDashboard: Content/media/user management, real-time stats.
+- NotificationBanner: Live updates for users/admins.
 
 ---
 
 ## Backend Components
 
-- **Express Server:** Modular routing, middleware, and error handling.
-- **Auth Controller:** Registration, login, JWT issuance, and role checks.
-- **Content Controller:** CRUD for landing page sections.
-- **Gallery Controller:** Media upload, retrieval, and deletion via Cloudinary.
-- **Contact Controller:** Handles form submissions and triggers email notifications.
-- **Admin Controller:** Admin-only endpoints for moderation and analytics.
-- **MongoDB Change Stream Service:** Pushes real-time updates to clients.
+- Express Server: Modular routing, middleware, and error handling.
+- Auth Controller: Registration, login, JWT issuance, and role checks.
+- Content Controller: CRUD for landing page sections.
+- Gallery Controller: Media upload, retrieval, and deletion via Cloudinary.
+- Contact Controller: Handles form submissions and triggers email notifications.
+- Admin Controller: Admin-only endpoints for moderation and analytics.
+- MongoDB Change Stream Service: Pushes real-time updates to clients.
 
 ---
 
@@ -128,73 +128,71 @@ graph TD
 
 ## Cloudinary Integration
 
-- **Upload:** `/api/gallery/upload` accepts multipart/form-data, validates file types, and uploads to Cloudinary.
-- **Transformation:** Images/videos are auto-optimized for device and bandwidth.
-- **Delivery:** Gallery fetches CDN URLs for fast, global access.
-- **Deletion:** Securely removes media from both Cloudinary and MongoDB.
+- Upload: `/api/gallery/upload` accepts multipart/form-data, validates file types, and uploads to Cloudinary.
+- Transformation: Images/videos are auto-optimized for device and bandwidth.
+- Delivery: Gallery fetches CDN URLs for fast, global access.
+- Deletion: Securely removes media from both Cloudinary and MongoDB.
 
 ---
 
 ## MongoDB Real-Time Updates
 
-- **Change Streams:** Listens for insert/update/delete on content and gallery collections.
-- **WebSockets:** Pushes updates to connected clients (users/admins) instantly.
-- **Use Cases:** Live notifications, gallery refresh, admin alerts.
+- Change Streams: Listens for insert/update/delete on content and gallery collections.
+- WebSockets: Pushes updates to connected clients (users/admins) instantly.
+- Use Cases: Live notifications, gallery refresh, admin alerts.
 
 ---
 
 ## Security & Best Practices
 
-- **Environment Variables:** Sensitive data managed via `.env` files.
-- **Input Validation:** Server-side and client-side validation for all endpoints.
-- **Rate Limiting:** Prevents brute-force and abuse.
-- **CORS & Helmet:** Secures HTTP headers and cross-origin requests.
-- **Password Hashing:** Uses bcrypt for storing credentials.
-- **Logging & Monitoring:** Centralized error logging and health checks.
+- Environment Variables: Sensitive data managed via `.env` files.
+- Input Validation: Server-side and client-side validation for all endpoints.
+- Rate Limiting: Prevents brute-force and abuse.
+- CORS & Helmet: Secures HTTP headers and cross-origin requests.
+- Password Hashing: Uses bcrypt for storing credentials.
+- Logging & Monitoring: Centralized error logging and health checks.
 
 ---
 
 ## Setup & Installation
 
-1. **Clone the repository**
-     ```bash
-     git clone https://github.com/your-username/streamline-landing.git
-     cd streamline-landing
-     ```
-2. **Install dependencies**
-     - Backend: `npm install`
-     - Frontend: `cd client && npm install`
-3. **Configure environment variables**
-     - Create `.env` files for backend and frontend with:
-         - `MONGODB_URI`
-         - `CLOUDINARY_CLOUD_NAME`, `CLOUDINARY_API_KEY`, `CLOUDINARY_API_SECRET`
-         - `JWT_SECRET`
-         - `EMAIL_SERVICE` (if using email notifications)
-4. **Run the application**
-     - Backend: `npm run dev`
-     - Frontend: `cd client && npm start`
-5. **Access the app**
-     - Visit `http://localhost:3000` (frontend)
-     - API runs on `http://localhost:5000` (default)
+1. Clone the repository
+      ```bash
+      git clone https://github.com/your-username/streamline-landing.git
+      cd streamline-landing
+      ```
+2. Install dependencies
+      - Backend: `npm install`
+      - Frontend: `cd client && npm install`
+3. Configure environment variables
+      - Create `.env` files for backend and frontend with:
+           - `MONGODB_URI`
+           - `CLOUDINARY_CLOUD_NAME`, `CLOUDINARY_API_KEY`, `CLOUDINARY_API_SECRET`
+           - `JWT_SECRET`
+           - `EMAIL_SERVICE` (if using email notifications)
+4. Run the application
+      - Backend: `npm run dev`
+      - Frontend: `cd client && npm start`
+5. Access the app
+      - Visit `http://localhost:3000` (frontend)
+      - API runs on `http://localhost:5000` (default)
 
 ---
 
 ## Development & Deployment
 
-- **Development:** Hot-reloading, ESLint/Prettier, and unit/integration tests.
-- **Deployment:** Ready for platforms like Vercel, Netlify (frontend), and Heroku, Render, or DigitalOcean (backend).
-- **CI/CD:** Integrate with GitHub Actions for automated testing and deployment.
+- Development: Hot-reloading, ESLint/Prettier, and unit/integration tests.
+- Deployment: Ready for platforms like Vercel, Netlify (frontend), and Heroku, Render, or DigitalOcean (backend).
+- CI/CD: Integrate with GitHub Actions for automated testing and deployment.
 
 ---
 
 ## License
 
 This project is proprietary and developed for a UK-based client. Not for public distribution.
-<<<<<<< HEAD
 
 ---
 
 > **Impress at a glance:**  
 > Streamline Landing demonstrates advanced full-stack engineering, mobile-first design, real-time interactivity, and secure, scalable architecture—making it a standout project for interviews and professional portfolios.
-=======
->>>>>>> c4f96cc7a477936a038575d057e78db96f4a61a3
+
