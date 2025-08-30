@@ -5,7 +5,8 @@
 Streamline Landing is a production-grade, full-stack web application built for a UK-based client, designed to showcase modern web development best practices. The project delivers a visually compelling, mobile-responsive landing page with real-time interactivity, robust media management, and a secure, scalable backend. Its architecture and feature set are crafted to impress technical interviewers and stakeholders alike.
 
 ---
-![image alt](https://github.com/Gokul11271/Sparsh/blob/d326b88ca00dff9c30588d20cb3bd61652fef051/sparsh-frontend-3scz5v2ow-gokul-rs-projects-d666a7f0.vercel.app_.png)
+![image alt](https://raw.githubusercontent.com/Gokul11271/Sparsh/d326b88ca00dff9c30588d20cb3bd61652fef051/sparsh-frontend-3scz5v2ow-gokul-rs-projects-d666a7f0.vercel.app_.png)
+
 ### 🚀 Key Highlights
 
 - Mobile-First & Responsive: Fully responsive UI/UX, optimized for all devices using CSS-in-JS and utility-first frameworks (e.g., Tailwind CSS or styled-components).
