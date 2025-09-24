@@ -4,7 +4,7 @@ import { Inter, Playfair_Display } from "next/font/google"
 import "./globals.css"
 import Script from "next/script"
 
-// ✅ Add this line
+// ✅ Auth context
 import { AuthProvider } from "../contexts/AuthContext"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
-        {/* ✅ Google Analytics */}
+        {/* ✅ Google Analytics (gtag.js) */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-2NJFE2BQG0"
           strategy="afterInteractive"
