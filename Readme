@@ -1,1 +1,137 @@
+# SPARSH DESIGN - Luxury Fashion Boutique 👗
+
+SPARSH DESIGN is a **full MERN stack luxury fashion boutique website**, built to deliver a modern, responsive, and elegant shopping experience. It includes both user and admin interfaces with real-time updates, categorized collections, and interactive animations.
+
+---
+
+## 🚀 Features
+
+### 🛍️ User Side
+
+* Beautifully designed homepage with **hero banners** and **animated sections**.
+* View **collections** (bridal, kidswear, custom designs, etc.) with categorized browsing.
+* **Gallery** section displaying real-time image updates.
+* **Book Appointment** for personalized styling.
+* Mobile-friendly responsive layout.
+
+### 🧑‍💼 Admin Side
+
+* **Secure authentication** for admin login.
+* Admin can **upload, categorize, and manage images**.
+* Real-time updates to the **Gallery component** using Socket.IO.
+* Clean, modern dashboard interface.
+
+---
+
+## 🧩 Tech Stack
+
+**Frontend:** React, Vite, Tailwind CSS, Framer Motion, ShadCN UI
+**Backend:** Node.js, Express.js, MongoDB, Mongoose
+**Real-Time Updates:** Socket.IO
+**Authentication:** JSON Web Token (JWT)
+**Hosting:** Vercel (Frontend) & Render (Backend)
+
+---
+
+## 🗂️ Folder Structure
+
+```
+SPARSH-DESIGN/
+│
+├── frontend/                # React + Vite Frontend
+│   ├── src/
+│   │   ├── components/      # Reusable UI Components
+│   │   ├── pages/           # Page-level Components
+│   │   ├── assets/          # Images, icons, etc.
+│   │   ├── App.jsx          # Main React Component
+│   │   └── main.jsx         # Entry Point
+│   ├── package.json
+│   ├── tailwind.config.js
+│   └── vite.config.js
+│
+├── backend/                 # Express + MongoDB Backend
+│   ├── src/
+│   │   ├── models/          # Mongoose Schemas
+│   │   ├── routes/          # API Routes
+│   │   ├── controllers/     # Logic for Routes
+│   │   └── server.js        # Main Server File
+│   ├── .env
+│   └── package.json
+│
+└── README.md
+```
+
+---
+
+## ⚙️ Installation & Setup
+
+### 1️⃣ Clone the Repository
+
+```bash
+git clone https://github.com/Gokul11271/SPARSH-DESIGN.git
+cd SPARSH-DESIGN
+```
+
+### 2️⃣ Backend Setup
+
+```bash
+cd backend
+npm install
+```
+
+Create a `.env` file in the backend root:
+
+```
+MONGO_URI=your_mongodb_connection_string
+PORT=5000
+JWT_SECRET=your_secret_key
+```
+
+Start the server:
+
+```bash
+npm run dev
+```
+
+Server runs on **[http://localhost:5000](http://localhost:5000)** 🚀
+
+### 3️⃣ Frontend Setup
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+Access frontend on **[http://localhost:5173](http://localhost:5173)** 💫
+
+---
+
+## 🧠 Project Highlights
+
+* Fully **responsive and SEO-optimized** design.
+* Integrated **admin authentication** and secure media management.
+* Built-in **real-time gallery updates** for seamless user experience.
+* Designed and developed **solo by Gokul R**, focusing on performance and luxury brand aesthetics.
+
+---
+
+## 💡 Future Enhancements
+
+* Add online payment gateway (Razorpay / Stripe)
+* Order management system for boutique appointments
+* AI-based fashion suggestion engine
+
+---
+
+## 📞 Contact
+
+**Developer:** Gokul R
+📧 Email: [erodegokul123@gmail.com](mailto:erodegokul123@gmail.com)
+🔗 LinkedIn: [linkedin.com/in/gokul04developer](https://linkedin.com/in/gokul04developer)
+💻 GitHub: [Gokul11271](https://github.com/Gokul11271)
+
+---
+
+> ✨ *A modern boutique experience crafted with elegance and technology — SPARSH DESIGN by Gokul R*
 
